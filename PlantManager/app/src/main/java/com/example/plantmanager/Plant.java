@@ -6,6 +6,8 @@ import android.media.Image;
 
 import com.example.plantmanager.enums.PlantBreed;
 import com.example.plantmanager.enums.PlantTypes;
+import com.example.plantmanager.enums.SunlightLevel;
+import com.example.plantmanager.enums.WaterStage;
 
 
 @Entity (tableName = "plants")
@@ -23,14 +25,14 @@ public class Plant {
 
     //Attributes linked to FK
     private PlantTypes plantTypes;
-    private int waterAmount;
-    private int sunlightAmount;
+    private WaterStage waterAmount;
+    private SunlightLevel sunlightAmount;
 
     public Plant(PlantBreed plantBreed) {
         setPlantBreed(plantBreed);
     }
 
-    Notification sendWaterReminder(int waterAmount){
+    Notification sendWaterReminder(int timer){
         Notification waterReminder = new Notification(plantName + "Reminder", "Don't forget to water your " + plantName);
         return waterReminder;
     }
@@ -39,11 +41,11 @@ public class Plant {
         return plantID;
     }
 
-    public int getWaterAmount() {
+    public WaterStage getWaterAmount() {
         return waterAmount;
     }
 
-    public int getSunlightAmount() {
+    public SunlightLevel getSunlightAmount() {
         return sunlightAmount;
     }
 
@@ -71,11 +73,15 @@ public class Plant {
         return image;
     }
 
-    public void setWaterAmount(int waterAmount) {
+    public void setPlantID(int plantID){
+        this.plantID = plantID;
+    }
+
+    public void setWaterAmount(WaterStage waterAmount) {
         this.waterAmount = waterAmount;
     }
 
-    public void setSunlightAmount(int sunlightAmount) {
+    public void setSunlightAmount(SunlightLevel sunlightAmount) {
         this.sunlightAmount = sunlightAmount;
     }
 
