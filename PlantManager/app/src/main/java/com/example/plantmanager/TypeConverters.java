@@ -30,13 +30,13 @@ public class TypeConverters {
 
     //WaterStage Converters
     @TypeConverter
-    public static WaterStage stringToWaterStage(String databaseValue) {
-        return databaseValue == null ? null : WaterStage.valueOf(databaseValue);
+    public static WaterLevel stringToWaterStage(String databaseValue) {
+        return databaseValue == null ? null : WaterLevel.valueOf(databaseValue);
     }
 
     @TypeConverter
-    public static String waterStageToString(WaterStage waterStage) {
-        return waterStage == null ? null : waterStage.toString();
+    public static String waterStageToString(WaterLevel waterLevel) {
+        return waterLevel == null ? null : waterLevel.toString();
     }
 
     //SunlightLevel Converters

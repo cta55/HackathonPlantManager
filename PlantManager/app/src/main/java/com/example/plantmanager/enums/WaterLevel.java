@@ -1,6 +1,6 @@
 package com.example.plantmanager.enums;
 
-public enum WaterStage {
+public enum WaterLevel {
     NO_WATER(0),
     LOW_WATER(1),
     MEDIUM_WATER(2),
@@ -10,7 +10,7 @@ public enum WaterStage {
 
     private final int imageID;
 
-    WaterStage(int imageID) {
+    WaterLevel(int imageID) {
         this.imageID = imageID;
     }
 

@@ -21,7 +21,7 @@ public class Plant {
 
     //Attributes linked to FK
     private PlantTypes plantTypes;
-    private WaterStage waterAmount;
+    private WaterLevel waterAmount;
     private SunlightLevel sunlightAmount;
 
     public Plant(PlantBreed plantBreed) {
@@ -37,7 +37,7 @@ public class Plant {
         return plantID;
     }
 
-    public WaterStage getWaterAmount() {
+    public WaterLevel getWaterAmount() {
         return waterAmount;
     }
 
@@ -73,7 +73,7 @@ public class Plant {
         this.plantID = plantID;
     }
 
-    public void setWaterAmount(WaterStage waterAmount) {
+    public void setWaterAmount(WaterLevel waterAmount) {
         this.waterAmount = waterAmount;
     }
 
