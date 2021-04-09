@@ -11,6 +11,7 @@ public class Plant {
     private String plantName;
     private int age;
     private String description;
+    private String image;
 
     //Foreign key
     private PlantBreed plantBreed;
@@ -22,12 +23,15 @@ public class Plant {
 
     public Plant(PlantBreed plantBreed) {
         setPlantBreed(plantBreed);
-
     }
 
     Notification sendWaterReminder(int waterAmount){
-        Notification waterReminder = new Notification("Reminder", "Don't forget to water your " + plantName);
+        Notification waterReminder = new Notification(plantName + "Reminder", "Don't forget to water your " + plantName);
         return waterReminder;
+    }
+
+    public int getPlantID() {
+        return plantID;
     }
 
     public int getWaterAmount() {
@@ -58,6 +62,10 @@ public class Plant {
         return plantBreed;
     }
 
+    public String getImage() {
+        return image;
+    }
+
     public void setWaterAmount(int waterAmount) {
         this.waterAmount = waterAmount;
     }
@@ -86,4 +94,7 @@ public class Plant {
         this.plantBreed = plantBreed;
     }
 
+    public void setImage(String image) {
+        this.image = image;
+    }
 }
