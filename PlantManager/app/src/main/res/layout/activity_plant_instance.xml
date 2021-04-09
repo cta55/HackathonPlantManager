@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/plantInstanceRootConstraintLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/plantInstanceHeaderFragmentContainerView"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toTopOf="@+id/plantInstancePictureFragmentContainerView"
         app:layout_constraintEnd_toEndOf="parent"
@@ -17,22 +18,72 @@
 
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/plantInstancePictureFragmentContainerView"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@+id/plantInstanceTypeDetailLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/plantInstanceHeaderFragmentContainerView">
+
+    </androidx.fragment.app.FragmentContainerView>
+
+
+    <LinearLayout
+        android:id="@+id/plantInstanceTypeDetailLayout"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@+id/plantInstanceAgeDetailLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/plantInstancePictureFragmentContainerView">
+
+        <TextView
+            android:id="@+id/plantInstanceTypeDetailTagView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="end"
+            android:text="@string/plant_instance_type_detail_tag_text" />
+
+        <TextView
+            android:id="@+id/plantInstanceTypeDetailValueView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/plantInstanceAgeDetailLayout"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="@+id/plantInstanceFooterButtonFragmentContainerView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/plantInstanceHeaderFragmentContainerView"
-        />
+        app:layout_constraintTop_toBottomOf="@+id/plantInstanceTypeDetailLayout">
 
+        <TextView
+            android:id="@+id/plantInstanceAgeDetailTagView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="end"
+            android:text="@string/plant_instance_age_detail_tag_text" />
+
+        <TextView
+            android:id="@+id/plantInstanceAgeDetailValueView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1" />
+    </LinearLayout>
 
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/plantInstanceFooterButtonFragmentContainerView"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/plantInstancePictureFragmentContainerView"
-        />
+        app:layout_constraintTop_toBottomOf="@+id/plantInstanceAgeDetailLayout" />
 </androidx.constraintlayout.widget.ConstraintLayout>
