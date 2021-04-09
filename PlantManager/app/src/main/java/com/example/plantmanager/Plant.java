@@ -2,12 +2,8 @@ package com.example.plantmanager;
 
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
-import android.media.Image;
 
-import com.example.plantmanager.enums.PlantBreed;
-import com.example.plantmanager.enums.PlantTypes;
-import com.example.plantmanager.enums.SunlightLevel;
-import com.example.plantmanager.enums.WaterStage;
+import com.example.plantmanager.enums.*;
 
 
 @Entity (tableName = "plants")
@@ -105,7 +101,7 @@ public class Plant {
         this.plantBreed = plantBreed;
     }
 
-    public void setImage(int imageID) {
+    public void setImageID(int imageID) {
         this.imageID = imageID;
     }
 }

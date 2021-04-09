@@ -9,7 +9,7 @@ public enum PlantBreed {
 
     private final String name;
 
-    private PlantBreed(String s) {
+    PlantBreed(String s) {
         name = s;
     }
 
