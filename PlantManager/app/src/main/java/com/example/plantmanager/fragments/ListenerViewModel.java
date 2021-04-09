@@ -1,4 +1,4 @@
-package com.example.plantmanager.dummy;
+package com.example.plantmanager.fragments;
 
 import android.view.View;
 
