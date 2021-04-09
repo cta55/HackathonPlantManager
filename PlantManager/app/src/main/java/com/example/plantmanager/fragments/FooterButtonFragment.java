@@ -13,6 +13,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 
 import com.example.plantmanager.R;
+import com.example.plantmanager.viewModels.ListenerViewModel;
 
 /**
  * Simple fragment that adds a specifically sized button, takes a string input for the button text
@@ -33,10 +34,9 @@ public class FooterButtonFragment extends Fragment {
     private Button footerButton;
 
     /**
-     * Private constructor to ensure all fragment construction is done via static method
+     * Public constructor needed for Fragment extensions. SHOULDN'T BE USED DIRECTLY!
      */
-    private FooterButtonFragment() {
-    }
+    public FooterButtonFragment() {}
 
     /**
      * Static constructor method to allow for the passing of bundled string values

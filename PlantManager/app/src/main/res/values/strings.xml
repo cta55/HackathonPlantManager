@@ -2,4 +2,6 @@
     <string name="app_name">PlantManager</string>
     <string name="title_planttype_list">PlantTypes</string>
     <string name="title_planttype_detail">PlantType Detail</string>
+
+    <string name="plant_instance_activity_footer_button_fragment_text">Edit</string>
 </resources>

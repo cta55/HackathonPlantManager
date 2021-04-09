@@ -28,10 +28,9 @@ public class HeaderFragment extends Fragment {
     private TextView headerTextView;
 
     /**
-     * Private basic constructor used in the static method.
+     * Public constructor needed for Fragment extensions. SHOULDN'T BE USED DIRECTLY!
      */
-    private HeaderFragment() {
-    }
+    public HeaderFragment() {}
 
     /**
      * Static method used to instantiate new header fragments with a specific value for header text
