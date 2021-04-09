@@ -18,7 +18,7 @@ public class Plant {
     private String plantName;
     private int age;
     private String description;
-    private Image image;
+    private int imageID;
 
     //Foreign key
     private PlantBreed plantBreed;
@@ -69,8 +69,8 @@ public class Plant {
         return plantBreed;
     }
 
-    public Image getImage() {
-        return image;
+    public int getImageID() {
+        return imageID;
     }
 
     public void setPlantID(int plantID){
@@ -105,7 +105,7 @@ public class Plant {
         this.plantBreed = plantBreed;
     }
 
-    public void setImage(Image image) {
-        this.image = image;
+    public void setImage(int imageID) {
+        this.imageID = imageID;
     }
 }

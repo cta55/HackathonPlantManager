@@ -1,23 +1,20 @@
 package com.example.plantmanager.enums;
 
 public enum WaterStage {
-    NO_WATER ("No further watering is required"),
-    LITTLE_WATER ("Water it a little"),
-    LOTS_OF_WATER("Water it a lot");
+    NO_WATER(0),
+    LOW_WATER(1),
+    MEDIUM_WATER(2),
+    HIGH_WATER(3),
+    FULL_WATER(4);
 
 
-    private final String name;
+    private final int imageID;
 
-    private WaterStage(String s) {
-        name = s;
+    WaterStage(int imageID) {
+        this.imageID = imageID;
     }
 
-    public boolean equalsName(String otherName) {
-        // (otherName == null) check is not needed because name.equals(null) returns false
-        return name.equals(otherName);
-    }
-
-    public String toString() {
-        return this.name;
+    public int getImageID() {
+        return imageID;
     }
 }
