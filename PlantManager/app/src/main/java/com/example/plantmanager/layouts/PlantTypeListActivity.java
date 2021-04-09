@@ -1,4 +1,4 @@
-package com.example.plantmanager;
+package com.example.plantmanager.layouts;
 
 import android.content.Context;
 import android.content.Intent;
@@ -9,7 +9,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.appcompat.widget.Toolbar;
 
-import com.example.plantmanager.fragments.PlantTypeDetailFragment;
+import com.example.plantmanager.R;
+import com.example.plantmanager.layouts.fragments.PlantTypeDetailFragment;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 

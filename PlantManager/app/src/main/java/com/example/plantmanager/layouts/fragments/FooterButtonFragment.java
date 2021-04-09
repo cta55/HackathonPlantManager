@@ -1,4 +1,4 @@
-package com.example.plantmanager.fragments;
+package com.example.plantmanager.layouts.fragments;
 
 import android.os.Bundle;
 

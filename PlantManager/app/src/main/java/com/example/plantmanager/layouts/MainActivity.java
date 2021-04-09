@@ -1,8 +1,10 @@
-package com.example.plantmanager;
+package com.example.plantmanager.layouts;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+
+import com.example.plantmanager.R;
 
 public class MainActivity extends AppCompatActivity {
 

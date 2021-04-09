@@ -1,4 +1,4 @@
-package com.example.plantmanager;
+package com.example.plantmanager.layouts;
 
 import android.os.Bundle;
 import android.view.View;
@@ -6,9 +6,11 @@ import android.view.View;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.ViewModelProvider;
 
-import com.example.plantmanager.fragments.FooterButtonFragment;
-import com.example.plantmanager.fragments.HeaderFragment;
-import com.example.plantmanager.fragments.PlantInstancePictureFragment;
+import com.example.plantmanager.Plant;
+import com.example.plantmanager.R;
+import com.example.plantmanager.layouts.fragments.FooterButtonFragment;
+import com.example.plantmanager.layouts.fragments.HeaderFragment;
+import com.example.plantmanager.layouts.fragments.PlantInstancePictureFragment;
 import com.example.plantmanager.viewModels.ListenerViewModel;
 import com.example.plantmanager.viewModels.PlantInstanceViewModel;
 

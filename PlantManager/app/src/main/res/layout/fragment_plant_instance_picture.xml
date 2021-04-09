@@ -5,7 +5,7 @@
     android:id="@+id/plantInstancePictureLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".fragments.PlantInstancePictureFragment">
+    tools:context=".layouts.fragments.PlantInstancePictureFragment">
 
     <ImageButton
         android:id="@+id/plantInstancePictureButton"

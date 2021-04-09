@@ -10,7 +10,7 @@
     android:divider="?android:attr/dividerHorizontal"
     android:orientation="horizontal"
     android:showDividers="middle"
-    tools:context=".PlantTypeListActivity">
+    tools:context=".layouts.PlantTypeListActivity">
 
     <!--
     This layout is a two-pane layout for the PlantTypes master/detail flow.
@@ -25,7 +25,7 @@
         android:layout_marginLeft="16dp"
         android:layout_marginRight="16dp"
         app:layoutManager="LinearLayoutManager"
-        tools:context="com.example.plantmanager.PlantTypeListActivity"
+        tools:context="com.example.plantmanager.layouts.PlantTypeListActivity"
         tools:listitem="@layout/planttype_list_content" />
 
     <FrameLayout
