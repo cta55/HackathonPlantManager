@@ -1,4 +1,4 @@
-package com.example.plantmanager;
+package com.example.plantmanager.enums;
 
 public enum PlantTypes {
     ROSES,

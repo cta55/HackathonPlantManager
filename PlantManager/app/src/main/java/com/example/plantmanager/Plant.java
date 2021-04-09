@@ -4,6 +4,9 @@ import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 import android.media.Image;
 
+import com.example.plantmanager.enums.PlantBreed;
+import com.example.plantmanager.enums.PlantTypes;
+
 
 @Entity (tableName = "plants")
 public class Plant {

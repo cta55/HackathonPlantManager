@@ -1,15 +1,14 @@
-package com.example.plantmanager;
+package com.example.plantmanager.enums;
 
-public enum PlantBreed {
-    MONSTERA ("Monstera"),
-    DEVILS_IVY ("Devil's Ivy"),
-    DRAGONS_TAIL ("Dragon's Tail"),
-    PEACE_LILY ("Peace Lily"),
-    SPDIER_PLANT ("Spider Plant");
+public enum WaterStage {
+    NO_WATER ("No further watering is required"),
+    LITTLE_WATER ("Water it a little"),
+    LOTS_OF_WATER("Water it a lot");
+
 
     private final String name;
 
-    private PlantBreed(String s) {
+    private WaterStage(String s) {
         name = s;
     }
 
@@ -22,11 +21,3 @@ public enum PlantBreed {
         return this.name;
     }
 }
-
-
-
-
-
-
-
-
