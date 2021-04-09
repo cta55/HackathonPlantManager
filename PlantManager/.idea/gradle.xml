@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+<<<<<<< Updated upstream
   <component name="GradleMigrationSettings" migrationVersion="1" />
+=======
+>>>>>>> Stashed changes
   <component name="GradleSettings">
     <option name="linkedExternalProjectsSettings">
       <GradleProjectSettings>
@@ -15,6 +18,10 @@
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />
+<<<<<<< Updated upstream
+=======
+        <option name="useQualifiedModuleNames" value="true" />
+>>>>>>> Stashed changes
       </GradleProjectSettings>
     </option>
   </component>
