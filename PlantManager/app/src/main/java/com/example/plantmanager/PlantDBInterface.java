@@ -14,7 +14,7 @@ public interface PlantDBInterface {
     void insertPlant(Plant plant);
 
     @Update
-    void updatePlant(Plant... plant);
+    void updatePlant(Plant plant);
 
     @Delete
     void delete(Plant plant);
