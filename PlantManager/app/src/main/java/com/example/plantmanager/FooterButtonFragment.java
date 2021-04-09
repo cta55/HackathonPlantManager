@@ -2,63 +2,97 @@ package com.example.plantmanager;
 
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.lifecycle.ViewModel;
+import androidx.lifecycle.ViewModelProvider;
+import androidx.lifecycle.ViewModelProviders;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+
+import com.example.plantmanager.dummy.ListenerViewModel;
 
 /**
- * A simple {@link Fragment} subclass.
- * Use the {@link FooterButtonFragment#newInstance} factory method to
- * create an instance of this fragment.
+ * Simple fragment that adds a specifically sized button, takes a string input for the button text
+ * and utilises ListenerViewModel to take an onClickListener input.
  */
 public class FooterButtonFragment extends Fragment {
 
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
+    // Key for passing button text string through bundle
+    private static final String BUTTON_TEXT_KEY = "button_text";
+    // Default value for button text, shouldn't appear in finished product
+    private static final String DEFAULT_BUTTON_TEXT = "DEFAULT_TEXT";
 
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
+    // View model for sharing onClickListener with parent
+    private ListenerViewModel viewModel;
 
-    public FooterButtonFragment() {
-        // Required empty public constructor
+    // Button variables
+    private String footerButtonText;
+    private Button footerButton;
+
+    /**
+     * Private constructor to ensure all fragment construction is done via static method
+     */
+    private FooterButtonFragment() {
     }
 
     /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment FooterButtonFragment.
+     * Static constructor method to allow for the passing of bundled string values
+     * @param footerButtonText : The text to appear on the button
+     * @return : A button with specific text that awaits a listener
      */
-    // TODO: Rename and change types and number of parameters
-    public static FooterButtonFragment newInstance(String param1, String param2) {
+    public static FooterButtonFragment newFooter(String footerButtonText) {
+        // Standard object creation
         FooterButtonFragment fragment = new FooterButtonFragment();
+        // Adding string to bundle
         Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
+        args.putString(BUTTON_TEXT_KEY, footerButtonText);
         fragment.setArguments(args);
+        // Returning setup fragment
         return fragment;
     }
 
+    /**
+     * Standard view function that runs when created. Takes string from bundle and saves it to
+     * variable.
+     */
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
+            footerButtonText = getArguments().getString(BUTTON_TEXT_KEY);
+        } else {
+            footerButtonText = DEFAULT_BUTTON_TEXT;
         }
     }
 
+    /**
+     * Standard fragment function that runs when added to screen. Gets button from id and applies
+     * text to it.
+     */
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_footer_button, container, false);
+        ViewGroup root = (ViewGroup) inflater.inflate(R.layout.fragment_footer_button, container, false);
+        // Getting button
+        footerButton = root.findViewById(R.id.footerButton);
+        footerButton.setText(footerButtonText);
+        return root;
+    }
+
+    /**
+     * Standard fragment function. Gets listener from parent's ListenerViewModel and applies it to
+     * button. Will probably crash if parent never sets a ListenerViewModel
+     */
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+        viewModel = new ViewModelProvider(requireActivity()).get(ListenerViewModel.class);
+        footerButton.setOnClickListener(viewModel.getListener());
     }
 }
