@@ -2,6 +2,8 @@ package com.example.plantmanager;
 
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
+import android.media.Image;
+
 
 @Entity (tableName = "plants")
 public class Plant {
@@ -11,7 +13,7 @@ public class Plant {
     private String plantName;
     private int age;
     private String description;
-    private String image;
+    private Image image;
 
     //Foreign key
     private PlantBreed plantBreed;
@@ -62,7 +64,7 @@ public class Plant {
         return plantBreed;
     }
 
-    public String getImage() {
+    public Image getImage() {
         return image;
     }
 
@@ -94,7 +96,7 @@ public class Plant {
         this.plantBreed = plantBreed;
     }
 
-    public void setImage(String image) {
+    public void setImage(Image image) {
         this.image = image;
     }
 }
