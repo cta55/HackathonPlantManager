@@ -15,7 +15,7 @@
         android:layout_marginTop="253dp"
         android:layout_marginEnd="164dp"
         android:layout_marginBottom="80dp"
-        android:background="#4CAF50"
+        android:background="#8EF492"
         android:ellipsize="none"
         android:fontFamily="cursive"
         android:text="My Garden"
@@ -34,7 +34,7 @@
         android:layout_marginTop="80dp"
         android:layout_marginEnd="160dp"
         android:layout_marginBottom="221dp"
-        android:background="#4CAF50"
+        android:background="#A2FDA6"
         android:fontFamily="cursive"
         android:shadowColor="#313A31"
         android:text="Search Plant Database"
@@ -46,8 +46,8 @@
 
     <ImageView
         android:id="@+id/imageView2"
-        android:layout_width="1329dp"
-        android:layout_height="731dp"
+        android:layout_width="1327dp"
+        android:layout_height="754dp"
         android:background="#004CAF50"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
