@@ -117,7 +117,7 @@ public class PlantInstanceEditActivity extends PlantInstanceActivity implements 
         // plantImageID is set when user finished with the picture button screen
 
         if (plantInstance == null) { // Making new Plant TODO... Fix description
-            plantInstance = new Plant(plantName, plantAge,"placeholder", plantImageID,  plantBreed);
+            plantInstance = new Plant(plantName, plantAge, plantImageID,  plantBreed);
         } else { // Editing existing Plant Object
             plantInstance.setPlantName(plantName);
             // plant type is enforced and cannot be changed
