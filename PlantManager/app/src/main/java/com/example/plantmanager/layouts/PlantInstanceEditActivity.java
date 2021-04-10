@@ -111,7 +111,7 @@ public class PlantInstanceEditActivity extends AppCompatActivity implements View
         // plantImageID is set when user finished with the picture button screen
 
         if (plantInstance == null) {
-            plantInstance = new Plant(plantName, plantBreed, plantAge, plantImageID);
+            plantInstance = new Plant(plantName, plantAge,"placeholder", plantImageID,  plantBreed);
         } else {
             plantInstance.setPlantName(plantName);
             // plant type is enforced and cannot be changed
