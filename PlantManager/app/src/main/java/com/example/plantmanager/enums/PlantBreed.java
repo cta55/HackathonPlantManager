@@ -1,6 +1,7 @@
 package com.example.plantmanager.enums;
 
 public enum PlantBreed {
+
     MONSTERA ("Monstera", PlantTypes.ARACEAE, SunlightLevel.MEDIUM_SUNLIGHT, WaterLevel.MEDIUM_WATER),
     DEVILS_IVY ("Devil's Ivy", PlantTypes.ARACEAE, SunlightLevel.LOW_SUNLIGHT, WaterLevel.LOW_WATER),
     BLUE_MYRTLE_CACTUS ("Blue Myrtle Cactus", PlantTypes.CACTACEAE, SunlightLevel.HIGH_SUNLIGHT, WaterLevel.NO_WATER),
@@ -18,6 +19,7 @@ public enum PlantBreed {
         this.plantType = type;
         this.sunlightLevel = sun;
         this.waterLevel = water;
+
     }
 
     public boolean equalsName(String otherName) {
@@ -38,6 +40,9 @@ public enum PlantBreed {
 
     public WaterLevel getWaterLevel() {
         return waterLevel;
+    }
+    public int getImageID() {
+        return imageID;
     }
 }
 

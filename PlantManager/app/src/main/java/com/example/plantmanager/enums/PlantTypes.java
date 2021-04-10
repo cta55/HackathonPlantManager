@@ -5,12 +5,11 @@ public enum PlantTypes {
     ASPARAGACEAE ("Asparagaceae", 1),
     CACTACEAE ("Cactaceae", 2);
 
-    private final String name;
-    private final int imageID;
 
-    PlantTypes(String s, int imageID) {
+    private final String name;
+
+    PlantTypes(String s) {
         name = s;
-        this.imageID = imageID;
     }
 
     public boolean equalsName(String otherName) {
@@ -22,8 +21,5 @@ public enum PlantTypes {
         return this.name;
     }
 
-    public int getImageID() {
-        return imageID;
-    }
 }
 
