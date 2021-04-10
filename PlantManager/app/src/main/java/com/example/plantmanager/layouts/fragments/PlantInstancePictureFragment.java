@@ -107,8 +107,8 @@ public class PlantInstancePictureFragment extends Fragment {
 
         // Applying data from Plant object
         plantPictureButton.setImageResource(plantInstance.getImageID());
-        plantWaterImageView.setImageResource(plantInstance.getWaterAmount().getImageID());
-        plantSunlightImageView.setImageResource(plantInstance.getSunlightAmount().getImageID());
+        plantWaterImageView.setImageResource(plantInstance.getPlantBreed().getWaterLevel().getImageID());
+        plantSunlightImageView.setImageResource(plantInstance.getPlantBreed().getSunlightLevel().getImageID());
         plantNameTextView.setText(plantInstance.getPlantName());
     }
 }
