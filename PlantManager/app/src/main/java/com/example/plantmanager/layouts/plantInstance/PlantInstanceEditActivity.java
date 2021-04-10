@@ -116,7 +116,7 @@ public class PlantInstanceEditActivity extends PlantInstanceActivity implements 
         plantAge = Integer.parseInt(plantAgeTextView.getText().toString());
         // plantImageID is set when user finished with the picture button screen
 
-        if (plantInstance == null) { // Making new Plant TODO... Fix description
+        if (plantInstance == null) { // Making new Plant
             plantInstance = new Plant(plantName, plantAge, plantImageID,  plantBreed);
         } else { // Editing existing Plant Object
             plantInstance.setPlantName(plantName);
