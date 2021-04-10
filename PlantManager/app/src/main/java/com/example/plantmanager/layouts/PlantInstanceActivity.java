@@ -7,6 +7,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.ViewModelProvider;
 
 import com.example.plantmanager.Plant;
+import com.example.plantmanager.PlantDB;
 import com.example.plantmanager.R;
 import com.example.plantmanager.layouts.fragments.FooterButtonFragment;
 import com.example.plantmanager.layouts.fragments.HeaderFragment;
@@ -35,7 +36,7 @@ public class PlantInstanceActivity extends AppCompatActivity implements View.OnC
         setContentView(R.layout.activity_plant_instance);
 
         plantID = savedInstanceState.getInt(PLANT_ID_KEY);
-        // plantInstance = GET INSTANCE SOMEHOW TODO...
+        plantInstance = PlantDB.getInstance(this).plantDBInterface().getPlant(plantID);
 
         plantInstanceHeaderFragment = HeaderFragment.newHeader(plantInstance.getPlantName());
         plantInstanceFooterButtonFragment = FooterButtonFragment.newFooter(
