@@ -47,9 +47,9 @@ public class PlantInstanceActivity extends AppCompatActivity implements View.OnC
 
         getSupportFragmentManager().beginTransaction()
                 .setReorderingAllowed(true)
-                .add(R.id.plantInstanceHeaderFragmentContainerView, plantInstanceHeaderFragment)
+                .add(R.id.plantInstanceEditHeaderFragmentContainerView, plantInstanceHeaderFragment)
                 .add(R.id.plantInstancePictureFragmentContainerView, plantInstancePictureFragment)
-                .add(R.id.plantInstanceFooterButtonFragmentContainerView, plantInstanceFooterButtonFragment)
+                .add(R.id.plantInstanceEditFooterButtonFragmentContainerView, plantInstanceFooterButtonFragment)
                 .commit();
 
 
