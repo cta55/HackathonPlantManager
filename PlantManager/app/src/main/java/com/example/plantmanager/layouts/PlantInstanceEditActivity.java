@@ -109,9 +109,6 @@ public class PlantInstanceEditActivity extends AppCompatActivity implements View
      */
     private void setupFragments() {
         // Instantiating fragments with specific input values
-        headerFragment = HeaderFragment.newHeader(
-                getString(R.string.plant_instance_edit_activity_header_text)
-        );
         footerButtonFragment = FooterButtonFragment.newFooter(
                 getString(R.string.plant_instance_edit_activity_footer_button_fragment_text)
         );
@@ -139,7 +136,7 @@ public class PlantInstanceEditActivity extends AppCompatActivity implements View
      * Private helper method that gets View objects from their resource IDs.
      */
     private void getViewsFromID() {
-        plantNameEditText = null; // TODO...
+        plantNameEditText = findViewById(R.id.plantInstanceEditNameDetailEditText);
         plantTypeTextView = findViewById(R.id.plantInstanceEditTypeDetailValueView);
         plantAgeEditText = findViewById(R.id.plantInstanceEditAgeDetailEditTextNumber);
         plantImageButton = findViewById(R.id.plantInstanceEditImageButtonView);

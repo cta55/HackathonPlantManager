@@ -76,7 +76,7 @@ public class HeaderFragment extends Fragment {
         ViewGroup root = (ViewGroup) inflater.inflate(R.layout.fragment_header, null);
 
         // Getting text view
-        headerTextView = (TextView) root.findViewById(R.id.headerTextView);
+        headerTextView = root.findViewById(R.id.headerTextView);
         headerTextView.append(headerText);
         return root;
     }
