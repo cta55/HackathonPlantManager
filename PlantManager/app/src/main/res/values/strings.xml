@@ -17,4 +17,6 @@
     <string name="default_plant_instance_name_text">New Plant</string>
     <string name="default_plant_instance_age_value">0</string> // Kinda cursed ngl
 
+    <string name="plant_breed_key">plant_breed</string>
+    <string name="plant_id_key">plant_id</string>
 </resources>
