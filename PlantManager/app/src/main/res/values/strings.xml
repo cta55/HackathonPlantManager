@@ -19,4 +19,12 @@
 
     <string name="plant_breed_key">plant_breed</string>
     <string name="plant_id_key">plant_id</string>
+
+
+    <!--Descriptions-->
+    <string name="monsteraDesc">Monsteras are herbs or evergreen vines, growing to heights of 20 metres in trees, climbing by means of aerial roots which act as hooks over branches; these roots will also grow into the soil to help support the plant. The leaves are alternate, leathery, dark green, very large, from 25–90 centimetres  long and 15–75 centimetres broad, often with holes in the leaf blade, and are commonly grown indoors as houseplants.</string>
+    <string name="devilsIvyDesc">Devil\'s Ivy are a popular indoor plant, as they are almost impossible to kill and they stay green even when kept in the dark. The leaves are alternate, heart-shaped, entire on juvenile plants, but may be pinnatifid on mature plants, up to 100cm long and 45cm broad; juvenile leaves are much smaller, typically under 20cm long. </string>
+    <string name="blueMyrtleCactusDesc">The Blue Myrtle Cactus is a large shrubby cactus growing to 4–5 m tall, with candelabra-like branching on mature plants. This hardy plant requires little watering (rarely any in Winter), but craves strong sunlight.</string>
+    <string name="peaceLilyDesc">Peace Lilys are native to tropical regions of the Americas and southeastern Asia. They are evergreen herbaceous plants with large leaves 12–65 cm long and 3–25 cm broad. The flowers are produced in a spadix, surrounded by a 10–30 cm long, white, yellowish, or greenish spathe. The plant does not need large amounts of light or water to survive.</string>
+    <string name="spiderPlantDesc">The Spider Plant is a species of perennial flowering plant. It is native to tropical and southern Africa, but has become naturalized in other parts of the world, including western Australia. Chlorophytum comosum is easy to grow as a houseplant, and variegated forms are the most popular.</string>
 </resources>

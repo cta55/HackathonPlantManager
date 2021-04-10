@@ -17,9 +17,6 @@ public class Plant {
     @ColumnInfo(name = "age")
     private int age;
 
-    @ColumnInfo(name = "desc")
-    private String description;
-
     @ColumnInfo(name = "image_id")
     private int imageID;
 
@@ -47,10 +44,9 @@ public class Plant {
 
     }
 
-    public Plant(String plantName, int age, String description, int imageID, PlantBreed plantBreed) {
+    public Plant(String plantName, int age, int imageID, PlantBreed plantBreed) {
         this.plantName = plantName;
         this.age = age;
-        this.description = description;
         this.imageID = imageID;
         this.plantBreed = plantBreed;
 //        setPlantBreedInfo();
@@ -77,10 +73,6 @@ public class Plant {
         return age;
     }
 
-    public String getDescription() {
-        return description;
-    }
-
     public String getPlantName() {
         return plantName;
     }
@@ -103,10 +95,6 @@ public class Plant {
 
     public void setAge(int age) {
         this.age = age;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
     }
 
     public void setPlantName(String plantName) {
