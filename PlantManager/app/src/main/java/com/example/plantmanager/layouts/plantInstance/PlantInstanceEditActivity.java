@@ -119,7 +119,8 @@ public class PlantInstanceEditActivity extends PlantInstanceActivity implements 
 
         if (plantInstance == null) { // Making new Plant
             plantInstance = new Plant(plantName, plantAge, plantImageID,  plantBreed);
-            plantDBInterface.
+            plantDBInterface.insertPlant(plantInstance);
+            plantID = plantInstance.getPlantID();
         } else { // Editing existing Plant Object
             plantInstance.setPlantName(plantName);
             // plant type is enforced and cannot be changed
