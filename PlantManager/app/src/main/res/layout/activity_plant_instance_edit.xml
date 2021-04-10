@@ -8,15 +8,18 @@
     tools:context=".layouts.PlantInstanceEditActivity">
 
 
-    <androidx.fragment.app.FragmentContainerView
-        android:id="@+id/plantInstanceEditHeaderFragmentContainerView"
+    <EditText
+        android:id="@+id/plantInstanceEditNameDetailEditText"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:inputType="text"
+        android:visibility="visible"
         app:layout_constraintBottom_toTopOf="@+id/plantInstanceEditImageButtonLayout"
+        app:layout_constraintDimensionRatio="3"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
 
     <FrameLayout
         android:id="@+id/plantInstanceEditImageButtonLayout"
@@ -25,7 +28,7 @@
         app:layout_constraintBottom_toTopOf="@+id/plantInstanceEditTypeDetailLayout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/plantInstanceEditHeaderFragmentContainerView">
+        app:layout_constraintTop_toBottomOf="@+id/plantInstanceEditNameDetailEditText">
 
         <ImageButton
             android:id="@+id/plantInstanceEditImageButtonView"
