@@ -1,15 +1,18 @@
 package com.example.plantmanager.enums;
 
 public enum PlantTypes {
-    BRYOPHYTE ("Bryophyte"),
-    PTERIDOPHYTE ("Pteridophyte"),
-    GYMNOSPERM ("Gymnosperm"),
-    ANGIOSPERM ("Angiosperm");
+    ARACEAE ("Araceae", 0), // TODO... put actual images here
+    ASPARAGACEAE ("Asparagaceae", 1),
+    CACTACEAE ("Cactaceae", 2);
+
 
     private final String name;
+    private final int imageid;
 
-    PlantTypes(String s) {
-        name = s;
+
+    PlantTypes(String s, int imageid) {
+        this.name = s;
+        this.imageid = imageid;
     }
 
     public boolean equalsName(String otherName) {

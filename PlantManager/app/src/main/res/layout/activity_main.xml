@@ -6,13 +6,31 @@
     android:layout_height="match_parent"
     tools:context=".layouts.MainActivity">
 
-    <TextView
+    <Button
+        android:id="@+id/MyPlantsButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginStart="159dp"
+        android:layout_marginTop="253dp"
+        android:layout_marginEnd="164dp"
+        android:layout_marginBottom="80dp"
+        android:text="My Garden"
+        app:layout_constraintBottom_toTopOf="@+id/PlantDatabaseButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <Button
+        android:id="@+id/PlantDatabaseButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="163dp"
+        android:layout_marginTop="80dp"
+        android:layout_marginEnd="160dp"
+        android:layout_marginBottom="221dp"
+        android:text="Search Plant Database"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/MyPlantsButton" />
 </androidx.constraintlayout.widget.ConstraintLayout>

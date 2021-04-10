@@ -196,9 +196,8 @@ public class PlantInstanceEditActivity extends AppCompatActivity implements View
         plantAge = Integer.parseInt(plantAgeEditText.getText().toString());
         // plantImageID is set when user finished with the picture button screen
 
-        if (plantInstance == null) { // Making new Plant object
-            plantInstance = new Plant(plantName, plantBreed, plantAge, plantImageID);
-
+        if (plantInstance == null) { // Making new Plant TODO... Fix description
+            plantInstance = new Plant(plantName, plantAge,"placeholder", plantImageID,  plantBreed);
         } else { // Editing existing Plant Object
             plantInstance.setPlantName(plantName);
             // plant type is enforced and cannot be changed

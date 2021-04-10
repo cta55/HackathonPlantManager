@@ -5,6 +5,7 @@ import androidx.room.Room;
 
 import android.os.Bundle;
 
+import com.example.plantmanager.PlantDB;
 import com.example.plantmanager.R;
 
 public class MainActivity extends AppCompatActivity {
@@ -13,9 +14,5 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-//        PlantDB plantDatabaseOject = Room.databaseBuilder(getApplicationContext(), PlantDB.class, "plant_db").build();
-//
-//        Plant plant = plantDatabaseOject.getPlant(1);
     }
 }
