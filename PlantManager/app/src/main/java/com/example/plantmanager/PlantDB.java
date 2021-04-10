@@ -12,7 +12,7 @@ public abstract class PlantDB extends RoomDatabase{
 
     public static synchronized PlantDB getInstance(Context context){
         if (instance == null){
-            instance = Room.databaseBuilder(context.getApplicationContext(), PlantDB.class, DB_NAME).fallbackToDestructiveMigration().build();
+            instance = Room.databaseBuilder(context.getApplicationContext(), PlantDB.class, DB_NAME).fallbackToDestructiveMigration().allowMainThreadQueries().build();
         }
         return instance;
     }
