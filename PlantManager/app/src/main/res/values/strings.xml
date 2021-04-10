@@ -3,8 +3,11 @@
     <string name="title_planttype_list">PlantTypes</string>
     <string name="title_planttype_detail">PlantType Detail</string>
 
+    <string name="plant_instance_edit_activity_header_text">Edit</string>
+
     <string name="plant_instance_type_detail_tag_text">Type: </string>
     <string name="plant_instance_age_detail_tag_text">Age: </string>
 
     <string name="plant_instance_activity_footer_button_fragment_text">Edit</string>
+    <string name="plant_instance_edit_activity_footer_button_fragment_text">Save Changes</string>
 </resources>
