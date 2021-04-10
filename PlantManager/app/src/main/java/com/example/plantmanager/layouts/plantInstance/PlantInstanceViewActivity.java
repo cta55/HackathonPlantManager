@@ -21,10 +21,11 @@ public class PlantInstanceViewActivity extends PlantInstanceActivity implements 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_plant_instance);
 
+        Bundle args = getIntent().getBundleExtra("testBundle");
 
         plantDBInterface = PlantDB.getInstance(this).plantDBInterface();
 
-        if ((plantID = savedInstanceState.getInt(getString(R.string.plant_id_key))) == 0) {
+        if ((plantID = args.getInt(getString(R.string.plant_id_key))) == 0) {
             throw new RuntimeException("No plant ID given to PlantInstanceViewActivity");
         }
         getPlantDataFromPlantInstance(plantID);

@@ -119,6 +119,7 @@ public class PlantInstanceEditActivity extends PlantInstanceActivity implements 
 
         if (plantInstance == null) { // Making new Plant
             plantInstance = new Plant(plantName, plantAge, plantImageID,  plantBreed);
+            plantDBInterface.
         } else { // Editing existing Plant Object
             plantInstance.setPlantName(plantName);
             // plant type is enforced and cannot be changed
@@ -126,8 +127,16 @@ public class PlantInstanceEditActivity extends PlantInstanceActivity implements 
             plantInstance.setImageID(plantImageID);
         }
 
-        // Sending user back to main page
-        Intent goToMainActivityIntent = new Intent(this, MainActivity.class);
-        startActivity(goToMainActivityIntent);
+
+        // test intent
+        Intent goToPlantInstancePageIntent = new Intent(this, PlantInstanceViewActivity.class);
+        Bundle args = new Bundle();
+        args.putInt(getString(R.string.plant_id_key), plantID);
+        goToPlantInstancePageIntent.putExtra("testBundle", args);
+        startActivity(goToPlantInstancePageIntent);
+
+//        // Sending user back to main page
+//        Intent goToMainActivityIntent = new Intent(this, MainActivity.class);
+//        startActivity(goToMainActivityIntent);
     }
 }
