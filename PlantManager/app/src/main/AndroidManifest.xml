@@ -9,7 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".layouts.PlantInstanceEditActivity"></activity>
+        <activity android:name=".layouts.plantInstance.PlantInstanceEditActivity"></activity>
         <activity android:name=".NewPlantInstance" />
         <activity
             android:name=".layouts.PlantTypeListActivity"
@@ -31,7 +31,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".layouts.PlantInstanceActivity" />
+        <activity android:name=".layouts.plantInstance.PlantInstanceViewActivity" />
     </application>
 
 </manifest>

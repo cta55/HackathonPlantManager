@@ -1,4 +1,4 @@
-package com.example.plantmanager.layouts;
+package com.example.plantmanager.layouts.plantInstance;
 
 import android.os.Bundle;
 import android.view.View;
@@ -15,7 +15,7 @@ import com.example.plantmanager.layouts.fragments.PlantInstancePictureFragment;
 import com.example.plantmanager.viewModels.ListenerViewModel;
 import com.example.plantmanager.viewModels.PlantInstanceViewModel;
 
-public class PlantInstanceActivity extends AppCompatActivity implements View.OnClickListener{
+public class PlantInstanceViewActivity extends AppCompatActivity implements View.OnClickListener{
 
     private static final String PLANT_ID_KEY = "plant_id";
 

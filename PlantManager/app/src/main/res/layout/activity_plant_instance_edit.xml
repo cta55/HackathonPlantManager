@@ -5,50 +5,50 @@
     android:id="@+id/plantInstanceEditRootConstraintLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".layouts.PlantInstanceEditActivity">
+    tools:context=".layouts.plantInstance.PlantInstanceEditActivity">
 
 
     <EditText
-        android:id="@+id/plantInstanceEditNameDetailEditText"
+        android:id="@+id/headerTextView"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:inputType="text"
         android:visibility="visible"
-        app:layout_constraintBottom_toTopOf="@+id/plantInstanceEditImageButtonLayout"
+        app:layout_constraintBottom_toTopOf="@+id/plantInstanceImageButtonLayout"
         app:layout_constraintDimensionRatio="3"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <FrameLayout
-        android:id="@+id/plantInstanceEditImageButtonLayout"
+        android:id="@+id/plantInstanceImageButtonLayout"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        app:layout_constraintBottom_toTopOf="@+id/plantInstanceEditTypeDetailLayout"
+        app:layout_constraintBottom_toTopOf="@+id/plantInstanceTypeDetailLayout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/plantInstanceEditNameDetailEditText">
+        app:layout_constraintTop_toBottomOf="@+id/headerTextView">
 
         <ImageButton
-            android:id="@+id/plantInstanceEditImageButtonView"
+            android:id="@+id/plantInstanceImageButtonView"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             tools:srcCompat="@tools:sample/avatars" />
     </FrameLayout>
 
     <LinearLayout
-        android:id="@+id/plantInstanceEditTypeDetailLayout"
+        android:id="@+id/plantInstanceTypeDetailLayout"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:orientation="horizontal"
-        app:layout_constraintBottom_toTopOf="@+id/plantInstanceEditAgeDetailLayout"
+        app:layout_constraintBottom_toTopOf="@+id/plantInstanceAgeDetailLayout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/plantInstanceEditImageButtonLayout">
+        app:layout_constraintTop_toBottomOf="@+id/plantInstanceImageButtonLayout">
 
         <TextView
-            android:id="@+id/plantInstanceEditTypeDetailTagView"
+            android:id="@+id/plantInstanceTypeDetailTagView"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
@@ -56,7 +56,7 @@
             android:text="@string/plant_instance_type_detail_tag_text" />
 
         <TextView
-            android:id="@+id/plantInstanceEditTypeDetailValueView"
+            android:id="@+id/plantInstanceTypeDetailValueView"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
@@ -65,17 +65,17 @@
     </LinearLayout>
 
     <LinearLayout
-        android:id="@+id/plantInstanceEditAgeDetailLayout"
+        android:id="@+id/plantInstanceAgeDetailLayout"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:orientation="horizontal"
-        app:layout_constraintBottom_toTopOf="@+id/plantInstanceEditFooterButtonFragmentContainerView"
+        app:layout_constraintBottom_toTopOf="@+id/plantInstanceFooterButtonFragmentContainerView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/plantInstanceEditTypeDetailLayout">
+        app:layout_constraintTop_toBottomOf="@+id/plantInstanceTypeDetailLayout">
 
         <TextView
-            android:id="@+id/plantInstanceEditAgeDetailTagView"
+            android:id="@+id/plantInstanceAgeDetailTagView"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
@@ -83,7 +83,7 @@
             android:text="@string/plant_instance_age_detail_tag_text" />
 
         <EditText
-            android:id="@+id/plantInstanceEditAgeDetailEditTextNumber"
+            android:id="@+id/plantInstanceAgeDetailValueView"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
@@ -93,12 +93,12 @@
     </LinearLayout>
 
     <androidx.fragment.app.FragmentContainerView
-        android:id="@+id/plantInstanceEditFooterButtonFragmentContainerView"
+        android:id="@+id/plantInstanceFooterButtonFragmentContainerView"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/plantInstanceEditAgeDetailLayout" />
+        app:layout_constraintTop_toBottomOf="@+id/plantInstanceAgeDetailLayout" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
