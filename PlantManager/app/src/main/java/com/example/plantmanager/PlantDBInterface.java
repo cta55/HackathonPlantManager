@@ -11,10 +11,10 @@ public interface PlantDBInterface {
     List<Plant> getAll();
 
     @Query("SELECT * FROM plants WHERE plantID = (:plantID)")
-    List<Plant> getPlant(int plantID);
+    Plant getPlant(int plantID);
 
-//    @Query("SELECT * FROM plants WHERE plantID = (:plantTypes)")
-//    List<Plant> getPlantByType(PlantTypes plantTypes);
+    @Query("SELECT * FROM plants WHERE plantID = (:plantTypes)")
+    List<Plant> getPlantByType(PlantTypes plantTypes);
 
     @Insert
     void insertPlant(Plant plant);

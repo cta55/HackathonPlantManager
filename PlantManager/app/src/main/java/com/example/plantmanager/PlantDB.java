@@ -6,7 +6,7 @@ import androidx.room.TypeConverters;
 
 @Database (entities = Plant.class, exportSchema = false, version = 1)
 @TypeConverters({com.example.plantmanager.TypeConverters.class})
-public abstract class PlantDB extends RoomDatabase {
+public abstract class PlantDB extends RoomDatabase implements PlantDBInterface {
     private static final String DB_NAME = "plants_db";
     private static PlantDB instance;
 
