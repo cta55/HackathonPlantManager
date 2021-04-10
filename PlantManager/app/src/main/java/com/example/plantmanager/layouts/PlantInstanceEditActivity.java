@@ -1,8 +1,10 @@
 package com.example.plantmanager.layouts;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.lifecycle.ViewModelProvider;
 
 import android.os.Bundle;
+import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.TextView;
@@ -12,14 +14,17 @@ import com.example.plantmanager.R;
 import com.example.plantmanager.enums.PlantTypes;
 import com.example.plantmanager.layouts.fragments.FooterButtonFragment;
 import com.example.plantmanager.layouts.fragments.HeaderFragment;
+import com.example.plantmanager.viewModels.ListenerViewModel;
 
-public class PlantInstanceEditActivity extends AppCompatActivity {
+public class PlantInstanceEditActivity extends AppCompatActivity implements View.OnClickListener{
 
     private static final String PLANT_TYPE_KEY = "plant_type";
     private static final String PLANT_ID_KEY = "plant_id";
 
     private HeaderFragment headerFragment;
     private FooterButtonFragment footerButtonFragment;
+
+    private ListenerViewModel listenerViewModel;
 
     private EditText plantNameEditText;
     private TextView plantTypeTextView;
@@ -46,6 +51,11 @@ public class PlantInstanceEditActivity extends AppCompatActivity {
                 .add(R.id.plantInstanceEditFooterButtonFragmentContainerView, footerButtonFragment)
                 .commit();
 
+        // ----------- View Models ------------------
+
+        listenerViewModel = new ViewModelProvider(this).get(ListenerViewModel.class);
+        listenerViewModel.setListener(this);
+
         // ------------ Views --------------
         plantNameEditText = null; // TODO...
         plantTypeTextView = findViewById(R.id.plantInstanceEditTypeDetailValueView);
@@ -68,5 +78,10 @@ public class PlantInstanceEditActivity extends AppCompatActivity {
         }
 
         plantTypeTextView.setText(plantType.name());
+    }
+
+    @Override
+    public void onClick(View view) {
+
     }
 }
