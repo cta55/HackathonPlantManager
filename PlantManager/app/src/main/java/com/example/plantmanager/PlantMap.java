@@ -2,11 +2,16 @@ package com.example.plantmanager;
 
 import android.media.Image;
 
+import androidx.room.Entity;
+import androidx.room.PrimaryKey;
+
 import java.util.HashMap;
 
 public class PlantMap {
 
-    private HashMap<Integer, Plant> plantMap = new HashMap();
+    @PrimaryKey
+    private int plantMapID;
+    private HashMap<Integer, Plant> plantMap = new HashMap<>();
     private String mapName;
     private String mapDesc;
     private String mapLocation;
@@ -15,6 +20,14 @@ public class PlantMap {
     public PlantMap(String mapName, String mapDesc) {
         setMapName(mapName);
         setMapDesc(mapDesc);
+    }
+
+    public int getPlantMapID() {
+        return plantMapID;
+    }
+
+    public void setPlantMapID(int plantMapID) {
+        this.plantMapID = plantMapID;
     }
 
     public HashMap<Integer, Plant> getPlantMap() {

@@ -1,8 +1,6 @@
 package com.example.plantmanager;
 
-import androidx.room.Dao;
-import androidx.room.Entity;
-import androidx.room.PrimaryKey;
+import androidx.room.*;
 
 import com.example.plantmanager.enums.*;
 
@@ -12,34 +10,54 @@ public class Plant {
 
     @PrimaryKey (autoGenerate = true)
     private int plantID;
+
+    @ColumnInfo(name = "plant_name")
     private String plantName;
+
+    @ColumnInfo(name = "age")
     private int age;
+
+    @ColumnInfo(name = "desc")
     private String description;
+
+    @ColumnInfo(name = "image_id")
     private int imageID;
 
     //Foreign key
+
+    @ColumnInfo(name = "plant_breed")
     private PlantBreed plantBreed;
 
     //Attributes linked to FK
+
+    @ColumnInfo(name = "plant_type")
     private PlantTypes plantTypes;
+
+    @ColumnInfo(name = "water_amount")
     private WaterLevel waterAmount;
+
+    @ColumnInfo(name = "sunlight_amount")
     private SunlightLevel sunlightAmount;
 
     public Plant(PlantBreed plantBreed) {
         setPlantBreed(plantBreed);
     }
 
-//    public Plant(int plantID, String plantName, int age, String description, int imageID, PlantBreed plantBreed, PlantTypes plantTypes, WaterLevel waterAmount, SunlightLevel sunlightAmount) {
-//        this.plantID = plantID;
-//        this.plantName = plantName;
-//        this.age = age;
-//        this.description = description;
-//        this.imageID = imageID;
-//        this.plantBreed = plantBreed;
-//        this.plantTypes = plantTypes;
-//        this.waterAmount = waterAmount;
-//        this.sunlightAmount = sunlightAmount;
-//    }
+    public Plant(){
+        
+    }
+
+    public Plant(int plantID, String plantName, int age, String description, int imageID, PlantBreed plantBreed, PlantTypes plantTypes, WaterLevel waterAmount, SunlightLevel sunlightAmount) {
+        this.plantID = plantID;
+        this.plantName = plantName;
+        this.age = age;
+        this.description = description;
+        this.imageID = imageID;
+        this.plantBreed = plantBreed;
+        this.plantTypes = plantTypes;
+        this.waterAmount = waterAmount;
+        this.sunlightAmount = sunlightAmount;
+    }
 
     Notification sendWaterReminder(int timer){
         Notification waterReminder = new Notification(plantName + "Reminder", "Don't forget to water your " + plantName);

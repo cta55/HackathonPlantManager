@@ -49,4 +49,6 @@ public class TypeConverters {
     public static String sunlightLevelToString(SunlightLevel sunlightLevel) {
         return sunlightLevel == null ? null : sunlightLevel.toString();
     }
+
+
 }
