@@ -3,6 +3,7 @@ package com.example.plantmanager.layouts.fragments;
 import android.app.Activity;
 import android.os.Bundle;
 
+import com.example.plantmanager.enums.PlantBreed;
 import com.example.plantmanager.layouts.PlantTypeDetailActivity;
 import com.example.plantmanager.layouts.PlantTypeListActivity;
 import com.example.plantmanager.R;
@@ -33,7 +34,7 @@ public class PlantTypeDetailFragment extends Fragment {
     /**
      * The dummy content this fragment is presenting.
      */
-    private PlantTypeObject.DummyItem mItem;
+    private PlantBreed mItem;
 
     /**
      * Mandatory empty constructor for the fragment manager to instantiate the
@@ -55,7 +56,7 @@ public class PlantTypeDetailFragment extends Fragment {
             Activity activity = this.getActivity();
             CollapsingToolbarLayout appBarLayout = (CollapsingToolbarLayout) activity.findViewById(R.id.toolbar_layout);
             if (appBarLayout != null) {
-                appBarLayout.setTitle(mItem.content);
+                appBarLayout.setTitle(mItem.name());
             }
         }
     }
@@ -67,7 +68,7 @@ public class PlantTypeDetailFragment extends Fragment {
 
         // Show the dummy content as text in a TextView.
         if (mItem != null) {
-            ((TextView) rootView.findViewById(R.id.planttype_detail)).setText(mItem.details);
+            ((TextView) rootView.findViewById(R.id.planttype_detail)).setText(mItem.name());
         }
 
         return rootView;

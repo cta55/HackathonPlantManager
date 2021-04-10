@@ -10,6 +10,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import androidx.appcompat.widget.Toolbar;
 
 import com.example.plantmanager.R;
+import com.example.plantmanager.enums.PlantBreed;
 import com.example.plantmanager.layouts.fragments.PlantTypeDetailFragment;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
@@ -50,10 +51,6 @@ public class PlantTypeListActivity extends AppCompatActivity {
 
 
         if (findViewById(R.id.planttype_detail_container) != null) {
-            // The detail container view will be present only in the
-            // large-screen layouts (res/values-w900dp).
-            // If this view is present, then the
-            // activity should be in two-pane mode.
             mTwoPane = true;
         }
 
@@ -70,15 +67,15 @@ public class PlantTypeListActivity extends AppCompatActivity {
             extends RecyclerView.Adapter<SimpleItemRecyclerViewAdapter.ViewHolder> {
 
         private final PlantTypeListActivity mParentActivity;
-        private final List<PlantTypeObject.DummyItem> mValues;
+        private final List<PlantBreed> mValues;
         private final boolean mTwoPane;
         private final View.OnClickListener mOnClickListener = new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                PlantTypeObject.DummyItem item = (PlantTypeObject.DummyItem) view.getTag();
+                PlantBreed item = (PlantBreed) view.getTag();
                 if (mTwoPane) {
                     Bundle arguments = new Bundle();
-                    arguments.putString(PlantTypeDetailFragment.ARG_ITEM_ID, item.id);
+                    arguments.putString(PlantTypeDetailFragment.ARG_ITEM_ID, item.name());
                     PlantTypeDetailFragment fragment = new PlantTypeDetailFragment();
                     fragment.setArguments(arguments);
                     mParentActivity.getSupportFragmentManager().beginTransaction()
@@ -87,7 +84,7 @@ public class PlantTypeListActivity extends AppCompatActivity {
                 } else {
                     Context context = view.getContext();
                     Intent intent = new Intent(context, PlantTypeDetailActivity.class);
-                    intent.putExtra(PlantTypeDetailFragment.ARG_ITEM_ID, item.id);
+                    intent.putExtra(PlantTypeDetailFragment.ARG_ITEM_ID, item.name());
 
                     context.startActivity(intent);
                 }
@@ -95,7 +92,7 @@ public class PlantTypeListActivity extends AppCompatActivity {
         };
 
         SimpleItemRecyclerViewAdapter(PlantTypeListActivity parent,
-                                      List<PlantTypeObject.DummyItem> items,
+                                      List<PlantBreed> items,
                                       boolean twoPane) {
             mValues = items;
             mParentActivity = parent;
@@ -111,8 +108,8 @@ public class PlantTypeListActivity extends AppCompatActivity {
 
         @Override
         public void onBindViewHolder(final ViewHolder holder, int position) {
-            holder.mIdView.setText(mValues.get(position).id);
-            holder.mContentView.setText(mValues.get(position).content);
+            holder.mIdView.setText(mValues.get(position).name());
+            holder.mContentView.setText(mValues.get(position).getDescriptionID());
 
             holder.itemView.setTag(mValues.get(position));
             holder.itemView.setOnClickListener(mOnClickListener);
