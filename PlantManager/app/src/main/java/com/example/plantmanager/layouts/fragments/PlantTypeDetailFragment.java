@@ -1,10 +1,10 @@
-package com.example.plantmanager.fragments;
+package com.example.plantmanager.layouts.fragments;
 
 import android.app.Activity;
 import android.os.Bundle;
 
-import com.example.plantmanager.PlantTypeDetailActivity;
-import com.example.plantmanager.PlantTypeListActivity;
+import com.example.plantmanager.layouts.PlantTypeDetailActivity;
+import com.example.plantmanager.layouts.PlantTypeListActivity;
 import com.example.plantmanager.R;
 import com.google.android.material.appbar.CollapsingToolbarLayout;
 

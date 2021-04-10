@@ -9,28 +9,29 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".NewPlantInstance"></activity>
+        <activity android:name=".layouts.PlantInstanceEditActivity"></activity>
+        <activity android:name=".NewPlantInstance" />
         <activity
-            android:name=".PlantTypeListActivity"
+            android:name=".layouts.PlantTypeListActivity"
             android:label="@string/title_planttype_list"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".PlantTypeDetailActivity"
+            android:name=".layouts.PlantTypeDetailActivity"
             android:label="@string/title_planttype_detail"
-            android:parentActivityName=".PlantTypeListActivity"
+            android:parentActivityName=".layouts.PlantTypeListActivity"
             android:theme="@style/AppTheme.NoActionBar">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.example.plantmanager.PlantTypeListActivity" />
+                android:value="com.example.plantmanager.layouts.PlantTypeListActivity" />
         </activity>
-        <activity android:name=".MainActivity">
+        <activity android:name=".layouts.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".PlantInstanceActivity" />
+        <activity android:name=".layouts.PlantInstanceActivity" />
     </application>
 
 </manifest>

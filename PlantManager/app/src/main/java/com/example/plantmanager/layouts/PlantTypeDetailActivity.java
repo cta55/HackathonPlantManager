@@ -1,9 +1,10 @@
-package com.example.plantmanager;
+package com.example.plantmanager.layouts;
 
 import android.content.Intent;
 import android.os.Bundle;
 
-import com.example.plantmanager.fragments.PlantTypeDetailFragment;
+import com.example.plantmanager.R;
+import com.example.plantmanager.layouts.fragments.PlantTypeDetailFragment;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 

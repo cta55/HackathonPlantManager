@@ -5,7 +5,7 @@
     android:id="@+id/headerRootConstraintLayout"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    tools:context=".fragments.HeaderFragment" >
+    tools:context=".layouts.fragments.HeaderFragment" >
 
     <TextView
         android:id="@+id/headerTextView"

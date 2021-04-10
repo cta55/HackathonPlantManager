@@ -2,44 +2,50 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/plantInstanceRootConstraintLayout"
+    android:id="@+id/plantInstanceEditRootConstraintLayout"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    tools:context=".layouts.PlantInstanceEditActivity">
+
 
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/plantInstanceEditHeaderFragmentContainerView"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        app:layout_constraintBottom_toTopOf="@+id/plantInstancePictureFragmentContainerView"
+        app:layout_constraintBottom_toTopOf="@+id/plantInstanceEditImageButtonLayout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
 
-    <androidx.fragment.app.FragmentContainerView
-        android:id="@+id/plantInstancePictureFragmentContainerView"
+    <FrameLayout
+        android:id="@+id/plantInstanceEditImageButtonLayout"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toTopOf="@+id/plantInstanceTypeDetailLayout"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/plantInstanceEditTypeDetailLayout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/plantInstanceEditHeaderFragmentContainerView">
 
-    </androidx.fragment.app.FragmentContainerView>
-
+        <ImageButton
+            android:id="@+id/plantInstanceEditImageButtonView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:srcCompat="@tools:sample/avatars" />
+    </FrameLayout>
 
     <LinearLayout
-        android:id="@+id/plantInstanceTypeDetailLayout"
-        android:layout_width="match_parent"
+        android:id="@+id/plantInstanceEditTypeDetailLayout"
+        android:layout_width="0dp"
         android:layout_height="0dp"
         android:orientation="horizontal"
-        app:layout_constraintBottom_toTopOf="@+id/plantInstanceAgeDetailLayout"
+        app:layout_constraintBottom_toTopOf="@+id/plantInstanceEditAgeDetailLayout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/plantInstancePictureFragmentContainerView">
+        app:layout_constraintTop_toBottomOf="@+id/plantInstanceEditImageButtonLayout">
 
         <TextView
-            android:id="@+id/plantInstanceTypeDetailTagView"
+            android:id="@+id/plantInstanceEditTypeDetailTagView"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
@@ -47,37 +53,40 @@
             android:text="@string/plant_instance_type_detail_tag_text" />
 
         <TextView
-            android:id="@+id/plantInstanceTypeDetailValueView"
+            android:id="@+id/plantInstanceEditTypeDetailValueView"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:gravity="start|center_vertical" />
+
     </LinearLayout>
 
     <LinearLayout
-        android:id="@+id/plantInstanceAgeDetailLayout"
-        android:layout_width="match_parent"
+        android:id="@+id/plantInstanceEditAgeDetailLayout"
+        android:layout_width="0dp"
         android:layout_height="0dp"
         android:orientation="horizontal"
-        app:layout_constraintBottom_toBottomOf="@+id/plantInstanceEditFooterButtonFragmentContainerView"
+        app:layout_constraintBottom_toTopOf="@+id/plantInstanceEditFooterButtonFragmentContainerView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/plantInstanceTypeDetailLayout">
+        app:layout_constraintTop_toBottomOf="@+id/plantInstanceEditTypeDetailLayout">
 
         <TextView
-            android:id="@+id/plantInstanceAgeDetailTagView"
+            android:id="@+id/plantInstanceEditAgeDetailTagView"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:gravity="center_vertical|end"
             android:text="@string/plant_instance_age_detail_tag_text" />
 
-        <TextView
-            android:id="@+id/plantInstanceAgeDetailValueView"
+        <EditText
+            android:id="@+id/plantInstanceEditAgeDetailEditTextNumber"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:gravity="start|center_vertical" />
+            android:ems="10"
+            android:gravity="start|center_vertical"
+            android:inputType="number" />
     </LinearLayout>
 
     <androidx.fragment.app.FragmentContainerView
@@ -87,5 +96,6 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/plantInstanceAgeDetailLayout" />
+        app:layout_constraintTop_toBottomOf="@+id/plantInstanceEditAgeDetailLayout" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
