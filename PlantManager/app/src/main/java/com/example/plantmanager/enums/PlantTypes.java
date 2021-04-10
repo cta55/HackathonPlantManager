@@ -7,9 +7,12 @@ public enum PlantTypes {
 
 
     private final String name;
+    private final int imageid;
 
-    PlantTypes(String s) {
-        name = s;
+
+    PlantTypes(String s, int imageid) {
+        this.name = s;
+        this.imageid = imageid;
     }
 
     public boolean equalsName(String otherName) {
