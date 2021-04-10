@@ -20,7 +20,9 @@ public class PlantInstanceViewActivity extends PlantInstanceActivity implements 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_plant_instance);
 
-        plantID = savedInstanceState.getInt(PLANT_ID_KEY);
+        if ((plantID = savedInstanceState.getInt(PLANT_ID_KEY)) == 0) {
+            throw new RuntimeException("No plant ID given to PlantInstanceViewActivity");
+        }
         getPlantDataFromPlantInstance(plantID);
 
         setupFragments(getString(R.string.plant_instance_view_activity_footer_button_fragment_text));
