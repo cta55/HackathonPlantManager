@@ -1,34 +1,19 @@
 package com.example.plantmanager.layouts.plantInstance;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.lifecycle.ViewModelProvider;
-
-import com.example.plantmanager.Plant;
-import com.example.plantmanager.PlantDB;
 import com.example.plantmanager.R;
-import com.example.plantmanager.layouts.fragments.FooterButtonFragment;
 import com.example.plantmanager.layouts.fragments.HeaderFragment;
 import com.example.plantmanager.layouts.fragments.PlantInstancePictureFragment;
 import com.example.plantmanager.viewModels.ListenerViewModel;
 import com.example.plantmanager.viewModels.PlantInstanceViewModel;
 
-public class PlantInstanceViewActivity extends AppCompatActivity implements View.OnClickListener{
-
-    private static final String PLANT_ID_KEY = "plant_id";
+public class PlantInstanceViewActivity extends PlantInstanceActivity implements View.OnClickListener{
 
     private HeaderFragment plantInstanceHeaderFragment;
     private PlantInstancePictureFragment plantInstancePictureFragment;
-    private FooterButtonFragment plantInstanceFooterButtonFragment;
-
-    private ViewModelProvider viewModelProvider = new ViewModelProvider(this);
-    private ListenerViewModel listenerViewModel;
-    private PlantInstanceViewModel plantInstanceViewModel;
-
-    private Plant plantInstance;
-    private int plantID;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,11 +21,20 @@ public class PlantInstanceViewActivity extends AppCompatActivity implements View
         setContentView(R.layout.activity_plant_instance);
 
         plantID = savedInstanceState.getInt(PLANT_ID_KEY);
-        plantInstance = PlantDB.getInstance(this).plantDBInterface().getPlant(plantID);
+        getPlantDataFromPlantInstance(plantID);
 
-        plantInstanceHeaderFragment = HeaderFragment.newHeader(plantInstance.getPlantName());
-        plantInstanceFooterButtonFragment = FooterButtonFragment.newFooter(
-                getString(R.string.plant_instance_activity_footer_button_fragment_text)
+        setupFragments(getString(R.string.plant_instance_view_activity_footer_button_fragment_text));
+        getViewsFromID();
+        addPlantDataToViews();
+        setupViewModels(this, this, plantID);
+    }
+
+    @Override
+    protected void setupFragments(String footerButtonText) {
+        super.setupFragments(footerButtonText);
+
+        plantInstanceHeaderFragment = HeaderFragment.newHeader(
+                plantInstance.getPlantName()
         );
         plantInstancePictureFragment = PlantInstancePictureFragment.newPlantInstancePicture(
                 plantID
@@ -50,19 +44,15 @@ public class PlantInstanceViewActivity extends AppCompatActivity implements View
                 .setReorderingAllowed(true)
                 .add(R.id.plantInstanceEditHeaderFragmentContainerView, plantInstanceHeaderFragment)
                 .add(R.id.plantInstancePictureFragmentContainerView, plantInstancePictureFragment)
-                .add(R.id.plantInstanceEditFooterButtonFragmentContainerView, plantInstanceFooterButtonFragment)
                 .commit();
-
-
-        listenerViewModel = viewModelProvider.get(ListenerViewModel.class);
-        listenerViewModel.setListener(this);
-
-        plantInstanceViewModel = viewModelProvider.get(PlantInstanceViewModel.class);
-        plantInstanceViewModel.addPlantInstance(plantID, plantInstance);
     }
+
+
 
     @Override
     public void onClick(View v) {
-        // TODO...
+        Intent goToPlantInstanceEditIntent = new Intent(this, PlantInstanceEditActivity.class);
+        goToPlantInstanceEditIntent.putExtra(PLANT_ID_KEY, plantID);
+        startActivity(goToPlantInstanceEditIntent);
     }
 }
