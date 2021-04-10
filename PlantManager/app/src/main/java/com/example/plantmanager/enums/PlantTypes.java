@@ -1,10 +1,9 @@
 package com.example.plantmanager.enums;
 
 public enum PlantTypes {
-    BRYOPHYTE ("Bryophyte", 0), // TODO... put actual images here
-    PTERIDOPHYTE ("Pteridophyte", 1),
-    GYMNOSPERM ("Gymnosperm", 2),
-    ANGIOSPERM ("Angiosperm", 3);
+    ARACEAE ("Araceae", 0), // TODO... put actual images here
+    ASPARAGACEAE ("Asparagaceae", 1),
+    CACTACEAE ("Cactaceae", 2);
 
     private final String name;
     private final int imageID;

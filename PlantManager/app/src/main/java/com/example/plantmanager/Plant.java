@@ -30,33 +30,30 @@ public class Plant {
 
     //Attributes linked to FK
 
-    @ColumnInfo(name = "plant_type")
-    private PlantTypes plantTypes;
-
-    @ColumnInfo(name = "water_amount")
-    private WaterLevel waterAmount;
-
-    @ColumnInfo(name = "sunlight_amount")
-    private SunlightLevel sunlightAmount;
+//    @ColumnInfo(name = "plant_type")
+//    private PlantTypes plantTypes;
+//
+//    @ColumnInfo(name = "water_amount")
+//    private WaterLevel waterAmount;
+//
+//    @ColumnInfo(name = "sunlight_amount")
+//    private SunlightLevel sunlightAmount;
 
     public Plant(PlantBreed plantBreed) {
         setPlantBreed(plantBreed);
     }
 
     public Plant(){
-        
+
     }
 
-    public Plant(int plantID, String plantName, int age, String description, int imageID, PlantBreed plantBreed, PlantTypes plantTypes, WaterLevel waterAmount, SunlightLevel sunlightAmount) {
-        this.plantID = plantID;
+    public Plant(String plantName, int age, String description, int imageID, PlantBreed plantBreed) {
         this.plantName = plantName;
         this.age = age;
         this.description = description;
         this.imageID = imageID;
         this.plantBreed = plantBreed;
-        this.plantTypes = plantTypes;
-        this.waterAmount = waterAmount;
-        this.sunlightAmount = sunlightAmount;
+//        setPlantBreedInfo();
     }
 
     Notification sendWaterReminder(int timer){
@@ -68,13 +65,13 @@ public class Plant {
         return plantID;
     }
 
-    public WaterLevel getWaterAmount() {
-        return waterAmount;
-    }
-
-    public SunlightLevel getSunlightAmount() {
-        return sunlightAmount;
-    }
+//    public WaterLevel getWaterAmount() {
+//        return waterAmount;
+//    }
+//
+//    public SunlightLevel getSunlightAmount() {
+//        return sunlightAmount;
+//    }
 
     public int getAge() {
         return age;
@@ -88,9 +85,9 @@ public class Plant {
         return plantName;
     }
 
-    public PlantTypes getPlantTypes() {
-        return plantTypes;
-    }
+//    public PlantTypes getPlantTypes() {
+//        return plantTypes;
+//    }
 
     public PlantBreed getPlantBreed() {
         return plantBreed;
@@ -102,14 +99,6 @@ public class Plant {
 
     public void setPlantID(int plantID){
         this.plantID = plantID;
-    }
-
-    public void setWaterAmount(WaterLevel waterAmount) {
-        this.waterAmount = waterAmount;
-    }
-
-    public void setSunlightAmount(SunlightLevel sunlightAmount) {
-        this.sunlightAmount = sunlightAmount;
     }
 
     public void setAge(int age) {
@@ -124,10 +113,6 @@ public class Plant {
         this.plantName = plantName;
     }
 
-    public void setPlantTypes(PlantTypes plantTypes) {
-        this.plantTypes = plantTypes;
-    }
-
     public void setPlantBreed(PlantBreed plantBreed) {
         this.plantBreed = plantBreed;
     }
@@ -135,4 +120,10 @@ public class Plant {
     public void setImageID(int imageID) {
         this.imageID = imageID;
     }
+
+//    public void setPlantBreedInfo(){
+//        this.plantTypes = getPlantBreed().getPlantType();
+//        this.sunlightAmount = getPlantBreed().getSunlightLevel();
+//        this.waterAmount = getPlantBreed().getWaterLevel();
+//    }
 }
