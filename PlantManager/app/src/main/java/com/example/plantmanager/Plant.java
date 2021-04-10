@@ -29,17 +29,17 @@ public class Plant {
         setPlantBreed(plantBreed);
     }
 
-    public Plant(int plantID, String plantName, int age, String description, int imageID, PlantBreed plantBreed, PlantTypes plantTypes, WaterLevel waterAmount, SunlightLevel sunlightAmount) {
-        this.plantID = plantID;
-        this.plantName = plantName;
-        this.age = age;
-        this.description = description;
-        this.imageID = imageID;
-        this.plantBreed = plantBreed;
-        this.plantTypes = plantTypes;
-        this.waterAmount = waterAmount;
-        this.sunlightAmount = sunlightAmount;
-    }
+//    public Plant(int plantID, String plantName, int age, String description, int imageID, PlantBreed plantBreed, PlantTypes plantTypes, WaterLevel waterAmount, SunlightLevel sunlightAmount) {
+//        this.plantID = plantID;
+//        this.plantName = plantName;
+//        this.age = age;
+//        this.description = description;
+//        this.imageID = imageID;
+//        this.plantBreed = plantBreed;
+//        this.plantTypes = plantTypes;
+//        this.waterAmount = waterAmount;
+//        this.sunlightAmount = sunlightAmount;
+//    }
 
     Notification sendWaterReminder(int timer){
         Notification waterReminder = new Notification(plantName + "Reminder", "Don't forget to water your " + plantName);
