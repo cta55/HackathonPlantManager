@@ -37,9 +37,6 @@ import com.example.plantmanager.viewModels.ListenerViewModel;
 
 public class PlantInstanceEditActivity extends PlantInstanceActivity implements View.OnClickListener{
 
-    // Bundle keys
-    private final String PLANT_BREED_KEY = getString(R.string.plant_breed_key);
-
     // GUI Views
     private ImageButton plantImageButton;
 
@@ -61,18 +58,22 @@ public class PlantInstanceEditActivity extends PlantInstanceActivity implements 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_plant_instance_edit);
 
+        Bundle args = getIntent().getBundleExtra("testBundle");
+
+        plantDBInterface = PlantDB.getInstance(this).plantDBInterface();
+
         // Generic setup methods
         setupFragments(getString(R.string.plant_instance_edit_activity_footer_button_fragment_text));
         getViewsFromID();
 
         // Initial plant data is read from the given plant or from the defaults depending on bundle input
-        if (savedInstanceState == null) {
+        if (args == null) {
             throw new RuntimeException("Cannot start PlantInstanceEditActivity without bundle");
 
-        } else if ((plantID = savedInstanceState.getInt(PLANT_ID_KEY)) != 0) { // Plant ID input
+        } else if ((plantID = args.getInt(getString(R.string.plant_id_key))) != 0) { // Plant ID input
             getPlantDataFromPlantInstance(plantID);
 
-        } else if ((plantBreed = (PlantBreed) savedInstanceState.getSerializable(PLANT_BREED_KEY)) != null) { // Plant Breed input
+        } else if ((plantBreed = (PlantBreed) args.getSerializable(getString(R.string.plant_breed_key))) != null) { // Plant Breed input
             getPlantDataFromDefaults(plantBreed);
         } else {
             throw new RuntimeException("No type or plant ID passed to PlantInstanceEditActivity");
@@ -99,7 +100,7 @@ public class PlantInstanceEditActivity extends PlantInstanceActivity implements 
     @Override
     protected void addPlantDataToViews() {
         super.addPlantDataToViews();
-        plantImageButton.setImageResource(plantImageID);
+        // plantImageButton.setImageResource(plantImageID); TODO... uncomment when plants have pictures
     }
 
 

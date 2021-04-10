@@ -10,6 +10,8 @@ import android.widget.Button;
 
 import com.example.plantmanager.PlantDB;
 import com.example.plantmanager.R;
+import com.example.plantmanager.enums.PlantBreed;
+import com.example.plantmanager.layouts.plantInstance.PlantInstanceEditActivity;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -23,6 +25,15 @@ public class MainActivity extends AppCompatActivity {
 
         myPlantsButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
+
+                Intent testGoToPlantEditorIntent = new Intent(v.getContext(), PlantInstanceEditActivity.class);
+                Bundle bundle = new Bundle();
+                bundle.putSerializable(getString(R.string.plant_breed_key), PlantBreed.BLUE_MYRTLE_CACTUS);
+                testGoToPlantEditorIntent.putExtra("testBundle", bundle);
+                startActivity(testGoToPlantEditorIntent);
+
+
+
 //                Intent myPlantsIntent = new Intent(this, );
 //                startActivity(myPlantsIntent);
             }

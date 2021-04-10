@@ -7,7 +7,7 @@ public enum PlantBreed {
     DEVILS_IVY ("Devil's Ivy", R.string.devilsIvyDesc, PlantTypes.ARACEAE, SunlightLevel.LOW_SUNLIGHT, WaterLevel.LOW_WATER, 1),
     BLUE_MYRTLE_CACTUS ("Blue Myrtle Cactus", R.string.blueMyrtleCactusDesc, PlantTypes.CACTACEAE, SunlightLevel.HIGH_SUNLIGHT, WaterLevel.NO_WATER, 2),
     PEACE_LILY ("Peace Lily", R.string.peaceLilyDesc,  PlantTypes.ARACEAE, SunlightLevel.HIGH_SUNLIGHT, WaterLevel.MEDIUM_WATER, 3),
-    SPDIER_PLANT ("Spider Plant", R.string.spiderPlantDesc, PlantTypes.ASPARAGACEAE, SunlightLevel.MEDIUM_SUNLIGHT, WaterLevel.MEDIUM_WATER, 4);
+    SPIDER_PLANT("Spider Plant", R.string.spiderPlantDesc, PlantTypes.ASPARAGACEAE, SunlightLevel.MEDIUM_SUNLIGHT, WaterLevel.MEDIUM_WATER, 4);
 
 
     private final String name;

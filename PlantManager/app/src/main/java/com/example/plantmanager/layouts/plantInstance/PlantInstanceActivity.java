@@ -18,8 +18,6 @@ import com.example.plantmanager.viewModels.PlantInstanceViewModel;
 
 public abstract class PlantInstanceActivity extends AppCompatActivity {
 
-    protected final String PLANT_ID_KEY = getString(R.string.plant_id_key);
-
     protected FooterButtonFragment footerButtonFragment;
 
     protected ViewModelProvider viewModelProvider;
@@ -37,10 +35,9 @@ public abstract class PlantInstanceActivity extends AppCompatActivity {
     protected int plantImageID;
 
     protected Plant plantInstance;
-    protected final PlantDBInterface plantDBInterface;
+    protected PlantDBInterface plantDBInterface;
 
     public PlantInstanceActivity() {
-        plantDBInterface = PlantDB.getInstance(this).plantDBInterface();
     }
 
     protected void setupFragments(String footerButtonText) {
@@ -103,6 +100,6 @@ public abstract class PlantInstanceActivity extends AppCompatActivity {
     protected void addPlantDataToViews() {
         plantNameTextView.setText(plantName);
         plantTypeTextView.setText(plantBreed.getName());
-        plantAgeTextView.setText(plantAge);
+        plantAgeTextView.setText(String.valueOf(plantAge));
     }
 }
