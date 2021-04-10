@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/plantInstancePictureLayout"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     tools:context=".layouts.fragments.PlantInstancePictureFragment">
 
     <ImageButton
@@ -12,6 +12,7 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintDimensionRatio="1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -22,37 +23,37 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:src="@drawable/ic_launcher_foreground"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHeight_percent="0.5"
+        app:layout_constraintBottom_toTopOf="@+id/plantInstanceNameTextView"
+        app:layout_constraintEnd_toEndOf="@id/plantInstancePictureButton"
+        app:layout_constraintHeight_percent="0.4"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.5"
-        app:layout_constraintWidth_percent="0.5" />
+        app:layout_constraintStart_toStartOf="@id/plantInstancePictureButton"
+        app:layout_constraintTop_toTopOf="@+id/plantInstancePictureButton"
+        app:layout_constraintVertical_bias="1.0"
+        app:layout_constraintWidth_percent="0.4" />
 
     <ImageView
         android:id="@+id/plantInstanceSunlightImageView"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:src="@drawable/abc_vector_test"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHeight_percent="0.5"
-        app:layout_constraintHorizontal_bias="1"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.5"
-        app:layout_constraintWidth_percent="0.5" />
+        app:layout_constraintBottom_toTopOf="@+id/plantInstanceNameTextView"
+        app:layout_constraintEnd_toEndOf="@id/plantInstancePictureButton"
+        app:layout_constraintHeight_percent="0.4"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/plantInstancePictureButton"
+        app:layout_constraintTop_toTopOf="@+id/plantInstancePictureButton"
+        app:layout_constraintVertical_bias="1.0"
+        app:layout_constraintWidth_percent="0.4" />
 
     <TextView
         android:id="@+id/plantInstanceNameTextView"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display3"
         app:layout_constraintBottom_toBottomOf="@+id/plantInstancePictureButton"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/plantInstancePictureButton"
+        app:layout_constraintStart_toStartOf="@id/plantInstancePictureButton"
+        app:layout_constraintTop_toTopOf="@+id/plantInstancePictureButton"
         app:layout_constraintVertical_bias="1" />
 </androidx.constraintlayout.widget.ConstraintLayout>
