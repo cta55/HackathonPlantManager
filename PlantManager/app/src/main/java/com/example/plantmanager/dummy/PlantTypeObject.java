@@ -25,7 +25,7 @@ public class PlantTypeObject {
     static {
         // Add some sample items.
         for (int i = 1; i < ITEMS.size(); i++) {
-            addItem(ITEMS.get(i), Integer.toString(i));
+            addItem(ITEMS.get(i), Integer.toString(ITEMS.get(i).getImageID()));
         }
     }
 
