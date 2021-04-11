@@ -2,6 +2,7 @@ package com.example.plantmanager.layouts.plantInstance;
 
 import android.app.Activity;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;

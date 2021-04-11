@@ -3,11 +3,11 @@ package com.example.plantmanager.enums;
 import com.example.plantmanager.R;
 
 public enum PlantBreed {
-    MONSTERA ("Monstera", R.string.monsteraDesc, PlantTypes.ARACEAE, SunlightLevel.MEDIUM_SUNLIGHT, WaterLevel.MEDIUM_WATER, 0),
-    DEVILS_IVY ("Devil's Ivy", R.string.devilsIvyDesc, PlantTypes.ARACEAE, SunlightLevel.LOW_SUNLIGHT, WaterLevel.LOW_WATER, 1),
-    BLUE_MYRTLE_CACTUS ("Blue Myrtle Cactus", R.string.blueMyrtleCactusDesc, PlantTypes.CACTACEAE, SunlightLevel.HIGH_SUNLIGHT, WaterLevel.NO_WATER, 2),
-    PEACE_LILY ("Peace Lily", R.string.peaceLilyDesc,  PlantTypes.ARACEAE, SunlightLevel.HIGH_SUNLIGHT, WaterLevel.MEDIUM_WATER, 3),
-    SPIDER_PLANT("Spider Plant", R.string.spiderPlantDesc, PlantTypes.ASPARAGACEAE, SunlightLevel.MEDIUM_SUNLIGHT, WaterLevel.MEDIUM_WATER, 4);
+    MONSTERA ("Monstera", R.string.monsteraDesc, PlantTypes.ARACEAE, SunlightLevel.MEDIUM_SUNLIGHT, WaterLevel.MEDIUM_WATER, R.drawable.monstera_foreground),
+    DEVILS_IVY ("Devil's Ivy", R.string.devilsIvyDesc, PlantTypes.ARACEAE, SunlightLevel.LOW_SUNLIGHT, WaterLevel.LOW_WATER, R.drawable.devils_ivy_foreground),
+    BLUE_MYRTLE_CACTUS ("Blue Myrtle Cactus", R.string.blueMyrtleCactusDesc, PlantTypes.CACTACEAE, SunlightLevel.HIGH_SUNLIGHT, WaterLevel.NO_WATER, R.drawable.blue_myrtle_cactus_foreground),
+    PEACE_LILY ("Peace Lily", R.string.peaceLilyDesc,  PlantTypes.ARACEAE, SunlightLevel.HIGH_SUNLIGHT, WaterLevel.MEDIUM_WATER, R.drawable.peace_lily_foreground),
+    SPIDER_PLANT("Spider Plant", R.string.spiderPlantDesc, PlantTypes.ASPARAGACEAE, SunlightLevel.MEDIUM_SUNLIGHT, WaterLevel.MEDIUM_WATER, R.drawable.spider_plant_foreground);
 
 
     private final String name;

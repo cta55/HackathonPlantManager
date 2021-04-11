@@ -29,8 +29,8 @@ import com.example.plantmanager.enums.PlantBreed;
 public class PlantInstanceEditActivity extends PlantInstanceActivity implements View.OnClickListener{
 
     // GUI Views
-    private ImageView plantImageView;
     private TextView plantNameTextView;
+    private ImageView plantImageView;
 
     public PlantInstanceEditActivity() {
         super();
@@ -94,7 +94,7 @@ public class PlantInstanceEditActivity extends PlantInstanceActivity implements 
     protected void addPlantDataToViews() {
         super.addPlantDataToViews();
         plantNameTextView.setText(plantName);
-        // plantImageView.setImageResource(plantImageID); TODO... uncomment when plants have pictures
+        plantImageView.setImageResource(plantImageID);
     }
 
 
