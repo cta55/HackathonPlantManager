@@ -9,9 +9,9 @@ import java.util.List;
 @Dao
 public interface PlantDBInterface {
 
-//    PLANT DB QUERIES
-//    @Query("SELECT * FROM plants")
-//    List<Plant> getAll();
+    // PLANT DB QUERIES
+    @Query("SELECT * FROM plants")
+    List<Plant> getAll();
 
     @Query("SELECT * FROM plants WHERE plantID = (:plantID)")
     Plant getPlant(int plantID);
