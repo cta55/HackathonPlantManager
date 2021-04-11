@@ -3,7 +3,7 @@ package com.example.plantmanager.layouts.plantInstance;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.plantmanager.Plant;
@@ -29,7 +29,7 @@ import com.example.plantmanager.enums.PlantBreed;
 public class PlantInstanceEditActivity extends PlantInstanceActivity implements View.OnClickListener{
 
     // GUI Views
-    private ImageButton plantImageButton;
+    private ImageView plantImageView;
     private TextView plantNameTextView;
 
     public PlantInstanceEditActivity() {
@@ -50,7 +50,7 @@ public class PlantInstanceEditActivity extends PlantInstanceActivity implements 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_plant_instance_edit);
 
-        Bundle args = getIntent().getBundleExtra("testBundle");
+        Bundle args = getIntent().getBundleExtra(getString(R.string.plant_instance_bundle_key));
 
         plantDBInterface = PlantDB.getInstance(this).plantDBInterface();
 
@@ -83,7 +83,7 @@ public class PlantInstanceEditActivity extends PlantInstanceActivity implements 
     protected void getViewsFromID() {
         super.getViewsFromID();
         plantNameTextView = findViewById(R.id.headerTextView);
-        plantImageButton = findViewById(R.id.plantInstanceImageView);
+        plantImageView = findViewById(R.id.plantInstanceImageView);
     }
 
 
@@ -94,7 +94,7 @@ public class PlantInstanceEditActivity extends PlantInstanceActivity implements 
     protected void addPlantDataToViews() {
         super.addPlantDataToViews();
         plantNameTextView.setText(plantName);
-        // plantImageButton.setImageResource(plantImageID); TODO... uncomment when plants have pictures
+        // plantImageView.setImageResource(plantImageID); TODO... uncomment when plants have pictures
     }
 
 
@@ -126,7 +126,7 @@ public class PlantInstanceEditActivity extends PlantInstanceActivity implements 
         Intent goToPlantInstancePageIntent = new Intent(this, PlantInstanceViewActivity.class);
         Bundle args = new Bundle();
         args.putInt(getString(R.string.plant_id_key), plantID);
-        goToPlantInstancePageIntent.putExtra("testBundle", args);
+        goToPlantInstancePageIntent.putExtra(getString(R.string.plant_instance_bundle_key), args);
         startActivity(goToPlantInstancePageIntent);
 
 //        // Sending user back to main page

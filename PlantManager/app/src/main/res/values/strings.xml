@@ -19,6 +19,7 @@
 
     <string name="plant_breed_key">plant_breed</string>
     <string name="plant_id_key">plant_id</string>
+    <string name="plant_instance_bundle_key">plant_bundle</string>
 
 
     <!--Descriptions-->

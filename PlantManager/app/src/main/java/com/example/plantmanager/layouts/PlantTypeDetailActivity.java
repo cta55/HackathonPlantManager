@@ -6,6 +6,7 @@ import android.os.Bundle;
 import com.example.plantmanager.R;
 import com.example.plantmanager.enums.PlantBreed;
 import com.example.plantmanager.layouts.fragments.PlantTypeDetailFragment;
+import com.example.plantmanager.layouts.plantInstance.PlantInstanceEditActivity;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 
@@ -40,9 +41,12 @@ public class PlantTypeDetailActivity extends AppCompatActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own detail action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-                //TODO: put the opening of the edit form here??
+                Bundle plantEditBundle = new Bundle();
+                plantEditBundle.putSerializable(getString(R.string.plant_breed_key), plantBreed);
+
+                Intent goToPlantEditIntent = new Intent(view.getContext(), PlantInstanceEditActivity.class);
+                goToPlantEditIntent.putExtra(getString(R.string.plant_instance_bundle_key), plantEditBundle);
+                startActivity(goToPlantEditIntent);
             }
         });
 
