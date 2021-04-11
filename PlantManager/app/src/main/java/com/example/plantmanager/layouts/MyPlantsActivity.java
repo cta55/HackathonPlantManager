@@ -9,15 +9,18 @@ import com.example.plantmanager.PlantDBInterface;
 import com.example.plantmanager.layouts.fragments.FooterButtonFragment;
 import com.example.plantmanager.layouts.fragments.HeaderFragment;
 import com.example.plantmanager.layouts.fragments.PlantInstancePictureFragment;
+import com.example.plantmanager.layouts.fragments.RecyclerFragment;
 import com.example.plantmanager.layouts.plantInstance.PlantInstanceViewActivity;
 import com.example.plantmanager.viewModels.ListenerViewModel;
 import com.example.plantmanager.viewModels.MultiListenerViewModel;
+import com.example.plantmanager.viewModels.PlantImageFragmentViewModel;
 import com.google.android.material.appbar.CollapsingToolbarLayout;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.fragment.app.FragmentManager;
 import androidx.lifecycle.ViewModelProvider;
 
 import android.view.View;
@@ -32,9 +35,12 @@ import java.util.Map;
 public class MyPlantsActivity extends AppCompatActivity{
     protected ViewModelProvider viewModelProvider;
     protected MultiListenerViewModel listenerViewModel;
+    private PlantImageFragmentViewModel fragmentViewModel;
 
     HeaderFragment headerFragment;
     FooterButtonFragment footerButtonFragment;
+    RecyclerFragment recyclerFragment;
+
     List<PlantInstancePictureFragment> plantInstancePictureFragments;
     List<Plant> myPlants;
 
@@ -48,12 +54,25 @@ public class MyPlantsActivity extends AppCompatActivity{
         setupFragments();
         setupViewModels();
 
+        putFragmentsInLayout();
 
+
+    }
+
+    private void putFragmentsInLayout() {
+        FragmentManager fragmentManager = getSupportFragmentManager();
+
+        fragmentManager.beginTransaction()
+                .setReorderingAllowed(true)
+                .add(R.id.myPlantsHeaderFragmentContainerView, headerFragment)
+                .add(R.id.myPlantFooterButtonFragmentContainerView, footerButtonFragment)
+                .commit();
     }
 
     private void setupFragments() {
         headerFragment = HeaderFragment.newHeader(getString(R.string.my_plants_header_text));
         footerButtonFragment = FooterButtonFragment.newFooter(getString(R.string.my_plants_footer_button_text));
+        recyclerFragment = new RecyclerFragment();
         for (Plant plant: myPlants) {
             plantInstancePictureFragments.add(PlantInstancePictureFragment.newPlantInstancePicture(plant.getPlantID()));
         }
@@ -86,6 +105,10 @@ public class MyPlantsActivity extends AppCompatActivity{
             });
         }
         listenerViewModel.addMap(map);
+
+        fragmentViewModel = viewModelProvider.get(PlantImageFragmentViewModel.class);
+        fragmentViewModel.setList(plantInstancePictureFragments);
+
     }
 
 
