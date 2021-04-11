@@ -56,7 +56,7 @@ public class PlantTypeDetailFragment extends Fragment {
             Activity activity = this.getActivity();
             CollapsingToolbarLayout appBarLayout = (CollapsingToolbarLayout) activity.findViewById(R.id.toolbar_layout);
             if (appBarLayout != null) {
-                appBarLayout.setTitle(mItem.name());
+                appBarLayout.setTitle(mItem.getName());
             }
         }
     }
@@ -67,8 +67,20 @@ public class PlantTypeDetailFragment extends Fragment {
         View rootView = inflater.inflate(R.layout.planttype_detail, container, false);
 
         // Show the dummy content as text in a TextView.
+//        if (mItem != null) {
+//            (rootView.findViewById(R.id.planttype_detail)).setText(mItem.getName());
+//        }
         if (mItem != null) {
-            ((TextView) rootView.findViewById(R.id.planttype_detail)).setText(mItem.name());
+            ((TextView) rootView.findViewById(R.id.typefield)).setText(mItem.getPlantType().toString());
+        }
+        if (mItem != null) {
+            ((TextView) rootView.findViewById(R.id.descfield)).setText(mItem.getDescriptionID());
+        }
+        if (mItem != null) {
+            ((TextView) rootView.findViewById(R.id.waterfield)).setText(mItem.getWaterLevel().toString());
+        }
+        if (mItem != null) {
+            ((TextView) rootView.findViewById(R.id.sunfield)).setText(mItem.getSunlightLevel().toString());
         }
 
         return rootView;

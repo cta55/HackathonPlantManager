@@ -75,7 +75,7 @@ public class PlantTypeListActivity extends AppCompatActivity {
                 PlantBreed item = (PlantBreed) view.getTag();
                 if (mTwoPane) {
                     Bundle arguments = new Bundle();
-                    arguments.putString(PlantTypeDetailFragment.ARG_ITEM_ID, item.name());
+                    arguments.putString(PlantTypeDetailFragment.ARG_ITEM_ID, item.getName());
                     PlantTypeDetailFragment fragment = new PlantTypeDetailFragment();
                     fragment.setArguments(arguments);
                     mParentActivity.getSupportFragmentManager().beginTransaction()
@@ -108,9 +108,8 @@ public class PlantTypeListActivity extends AppCompatActivity {
 
         @Override
         public void onBindViewHolder(final ViewHolder holder, int position) {
-            holder.mIdView.setText(mValues.get(position).name());
-            holder.mContentView.setText(mValues.get(position).getDescriptionID());
-
+            holder.mIdView.setText(mValues.get(position).getName());
+            holder.mContentView.setText(mValues.get(position).getPlantType().toString());
             holder.itemView.setTag(mValues.get(position));
             holder.itemView.setOnClickListener(mOnClickListener);
         }
