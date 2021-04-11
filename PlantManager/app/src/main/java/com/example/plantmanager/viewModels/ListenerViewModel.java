@@ -16,7 +16,7 @@ public class ListenerViewModel extends ViewModel {
     public void setListener(View.OnClickListener listener) {
         listenerMutableLiveData.setValue(listener);
     }
-    public View.OnClickListener getListener() {
+    public View.OnClickListener getListener(int plantID) {
         return listenerMutableLiveData.getValue();
     }
 

@@ -8,7 +8,7 @@ import androidx.lifecycle.ViewModel;
 import java.util.HashMap;
 import java.util.Map;
 
-public class MultiListenerViewModel extends ViewModel {
+public class MultiListenerViewModel extends ListenerViewModel {
 
     private final MutableLiveData<Map<Integer, View.OnClickListener>> listenerData;
 
@@ -21,6 +21,7 @@ public class MultiListenerViewModel extends ViewModel {
         listenerData.getValue().putAll(map);
     }
 
+    @Override
     public View.OnClickListener getListener(int plantID) {
         return listenerData.getValue().get(plantID);
     }

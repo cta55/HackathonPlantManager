@@ -99,7 +99,7 @@ public class PlantInstancePictureFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
         // Getting the button listener from the Listener view model
         listenerViewModel = new ViewModelProvider(requireActivity()).get(ListenerViewModel.class);
-        plantPictureButton.setOnClickListener(listenerViewModel.getListener());
+        plantPictureButton.setOnClickListener(listenerViewModel.getListener(plantInstanceID));
 
         // Getting the Plant from the Plant view model
         plantViewModel = new ViewModelProvider(requireActivity()).get(PlantInstanceViewModel.class);

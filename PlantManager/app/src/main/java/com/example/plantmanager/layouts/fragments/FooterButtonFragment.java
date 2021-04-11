@@ -91,6 +91,6 @@ public class FooterButtonFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         viewModel = new ViewModelProvider(requireActivity()).get(ListenerViewModel.class);
-        footerButton.setOnClickListener(viewModel.getListener());
+        footerButton.setOnClickListener(viewModel.getListener(0)); // Cursed but whatever
     }
 }
