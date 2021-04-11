@@ -109,7 +109,7 @@ public class PlantTypeListActivity extends AppCompatActivity {
         @Override
         public void onBindViewHolder(final ViewHolder holder, int position) {
             holder.mIdView.setText(mValues.get(position).getName());
-            holder.mContentView.setText(mValues.get(position).getDescriptionID());
+            holder.mContentView.setText(mValues.get(position).getPlantType().toString());
             holder.itemView.setTag(mValues.get(position));
             holder.itemView.setOnClickListener(mOnClickListener);
         }
