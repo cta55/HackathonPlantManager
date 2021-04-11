@@ -41,7 +41,7 @@ public abstract class PlantInstanceActivity extends AppCompatActivity {
         footerButtonFragment = FooterButtonFragment.newFooter(footerButtonText);
         getSupportFragmentManager().beginTransaction()
                 .setReorderingAllowed(true)
-                .add(R.id.myPlantFooterButtonFragmentContainerView, footerButtonFragment)
+                .add(R.id.myPlantsFooterButtonFragmentContainerView, footerButtonFragment)
                 .commit();
     }
 

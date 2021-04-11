@@ -20,6 +20,7 @@ public class PlantInstanceViewModel extends ViewModel {
         plantInstanceMapLiveData.setValue(new HashMap<Integer, Plant>());
     }
 
+
     public void addPlantInstance(int plantInstanceID, Plant plantInstance) {
         plantInstanceMapLiveData.getValue().put(plantInstanceID, plantInstance);
     }
@@ -29,6 +30,7 @@ public class PlantInstanceViewModel extends ViewModel {
     }
 
 }
+
 
 
 

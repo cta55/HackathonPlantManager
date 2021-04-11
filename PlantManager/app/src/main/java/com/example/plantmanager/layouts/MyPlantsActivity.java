@@ -5,23 +5,21 @@ import android.os.Bundle;
 
 import com.example.plantmanager.Plant;
 import com.example.plantmanager.PlantDB;
-import com.example.plantmanager.PlantDBInterface;
 import com.example.plantmanager.layouts.fragments.FooterButtonFragment;
 import com.example.plantmanager.layouts.fragments.HeaderFragment;
 import com.example.plantmanager.layouts.fragments.PlantInstancePictureFragment;
+import com.example.plantmanager.layouts.fragments.PlantPictureAdapter;
 import com.example.plantmanager.layouts.fragments.RecyclerFragment;
 import com.example.plantmanager.layouts.plantInstance.PlantInstanceViewActivity;
-import com.example.plantmanager.viewModels.ListenerViewModel;
 import com.example.plantmanager.viewModels.MultiListenerViewModel;
 import com.example.plantmanager.viewModels.PlantImageFragmentViewModel;
-import com.google.android.material.appbar.CollapsingToolbarLayout;
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.android.material.snackbar.Snackbar;
+import com.example.plantmanager.viewModels.PlantInstanceViewModel;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.FragmentManager;
 import androidx.lifecycle.ViewModelProvider;
+import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.View;
 
@@ -35,8 +33,13 @@ import java.util.Map;
 public class MyPlantsActivity extends AppCompatActivity{
     protected ViewModelProvider viewModelProvider;
     protected MultiListenerViewModel listenerViewModel;
+    private PlantInstanceViewModel plantViewModel;
+
+
     private PlantImageFragmentViewModel fragmentViewModel;
 
+
+    FragmentManager fragmentManager;
     HeaderFragment headerFragment;
     FooterButtonFragment footerButtonFragment;
     RecyclerFragment recyclerFragment;
@@ -48,11 +51,15 @@ public class MyPlantsActivity extends AppCompatActivity{
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_my_plants);
-
+        fragmentManager = getSupportFragmentManager();
         myPlants = PlantDB.getInstance(this).plantDBInterface().getAll();
         plantInstancePictureFragments = new ArrayList<>();
         setupFragments();
         setupViewModels();
+
+        RecyclerView recyclerView = findViewById(R.id.myplantlist);
+        recyclerView.setLayoutManager(new GridLayoutManager(this, 2));
+        recyclerView.setAdapter(new PlantPictureAdapter(plantInstancePictureFragments, fragmentManager));
 
         putFragmentsInLayout();
 
@@ -60,12 +67,10 @@ public class MyPlantsActivity extends AppCompatActivity{
     }
 
     private void putFragmentsInLayout() {
-        FragmentManager fragmentManager = getSupportFragmentManager();
-
         fragmentManager.beginTransaction()
                 .setReorderingAllowed(true)
                 .add(R.id.myPlantsHeaderFragmentContainerView, headerFragment)
-                .add(R.id.myPlantFooterButtonFragmentContainerView, footerButtonFragment)
+                .add(R.id.myPlantsFooterButtonFragmentContainerView, footerButtonFragment)
                 .commit();
     }
 
@@ -108,6 +113,15 @@ public class MyPlantsActivity extends AppCompatActivity{
 
         fragmentViewModel = viewModelProvider.get(PlantImageFragmentViewModel.class);
         fragmentViewModel.setList(plantInstancePictureFragments);
+
+        plantViewModel = viewModelProvider.get(PlantInstanceViewModel.class);
+
+
+        for (Plant plant: myPlants) {
+            plantViewModel.addPlantInstance(plant.getPlantID(), plant);
+        }
+
+
 
     }
 

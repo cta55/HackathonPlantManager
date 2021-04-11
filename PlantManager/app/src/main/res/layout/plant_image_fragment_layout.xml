@@ -6,8 +6,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <ImageView
-        android:id="@+id/PlantImage"
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/plantInstanceImageFragmentContainerView"
         android:layout_width="170dp"
         android:layout_height="134dp"
         app:layout_constraintEnd_toEndOf="parent"

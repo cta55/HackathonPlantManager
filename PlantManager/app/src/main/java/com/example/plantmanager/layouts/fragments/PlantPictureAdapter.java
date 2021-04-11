@@ -22,9 +22,9 @@ public class PlantPictureAdapter extends RecyclerView.Adapter<PlantPictureAdapte
     public static class ViewHolder extends RecyclerView.ViewHolder {
         private final FragmentContainerView containerView;
 
-        public ViewHolder(@NonNull View itemView) {
-            super(itemView);
-            containerView = (FragmentContainerView) itemView.findViewById(R.id.plantInstanceImageFragmentContainerView);
+        public ViewHolder(@NonNull View plantImageFragmentLayoutView) {
+            super(plantImageFragmentLayoutView);
+            containerView = (FragmentContainerView) plantImageFragmentLayoutView.findViewById(R.id.plantInstanceImageFragmentContainerView);
         }
 
         public FragmentContainerView getContainerView() {

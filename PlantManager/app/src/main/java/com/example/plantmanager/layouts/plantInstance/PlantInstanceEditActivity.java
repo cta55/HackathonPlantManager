@@ -122,15 +122,11 @@ public class PlantInstanceEditActivity extends PlantInstanceActivity implements 
         }
 
 
-        // test intent
         Intent goToPlantInstancePageIntent = new Intent(this, PlantInstanceViewActivity.class);
         Bundle args = new Bundle();
         args.putInt(getString(R.string.plant_id_key), plantID);
         goToPlantInstancePageIntent.putExtra(getString(R.string.plant_instance_bundle_key), args);
         startActivity(goToPlantInstancePageIntent);
 
-//        // Sending user back to main page
-//        Intent goToMainActivityIntent = new Intent(this, MainActivity.class);
-//        startActivity(goToMainActivityIntent);
     }
 }
