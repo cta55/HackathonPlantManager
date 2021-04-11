@@ -16,7 +16,7 @@ public interface PlantDBInterface {
     @Query("SELECT * FROM plants WHERE plantID = (:plantID)")
     Plant getPlant(int plantID);
 
-//    @Query("SELECT * FROM plants WHERE plantID = (:plantTypes)")
+//    @Query("SELECT * FROM plants WHERE plantTypes = (:plantTypes)")
 //    List<Plant> getPlantByType(PlantTypes plantTypes);
 
     @Insert
