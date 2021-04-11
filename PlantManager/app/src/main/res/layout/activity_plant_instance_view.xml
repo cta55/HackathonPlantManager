@@ -7,7 +7,7 @@
     android:layout_height="match_parent">
 
     <androidx.fragment.app.FragmentContainerView
-        android:id="@+id/plantInstanceEditHeaderFragmentContainerView"
+        android:id="@+id/plantInstanceHeaderFragmentContainerView"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toTopOf="@+id/plantInstancePictureFragmentContainerView"
@@ -23,7 +23,7 @@
         app:layout_constraintBottom_toTopOf="@+id/plantInstanceTypeDetailLayout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/plantInstanceEditHeaderFragmentContainerView">
+        app:layout_constraintTop_toBottomOf="@+id/plantInstanceHeaderFragmentContainerView">
 
     </androidx.fragment.app.FragmentContainerView>
 
@@ -59,7 +59,7 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:orientation="horizontal"
-        app:layout_constraintBottom_toBottomOf="@+id/plantInstanceEditFooterButtonFragmentContainerView"
+        app:layout_constraintBottom_toBottomOf="@+id/plantInstanceFooterButtonFragmentContainerView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/plantInstanceTypeDetailLayout">
@@ -81,7 +81,7 @@
     </LinearLayout>
 
     <androidx.fragment.app.FragmentContainerView
-        android:id="@+id/plantInstanceEditFooterButtonFragmentContainerView"
+        android:id="@+id/plantInstanceFooterButtonFragmentContainerView"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"

@@ -39,6 +39,7 @@ public class PlantInstanceEditActivity extends PlantInstanceActivity implements 
 
     // GUI Views
     private ImageButton plantImageButton;
+    private TextView plantNameTextView;
 
     public PlantInstanceEditActivity() {
         super();
@@ -90,6 +91,7 @@ public class PlantInstanceEditActivity extends PlantInstanceActivity implements 
     @Override
     protected void getViewsFromID() {
         super.getViewsFromID();
+        plantNameTextView = findViewById(R.id.headerTextView);
         plantImageButton = findViewById(R.id.plantInstanceImageButtonView);
     }
 
@@ -100,6 +102,7 @@ public class PlantInstanceEditActivity extends PlantInstanceActivity implements 
     @Override
     protected void addPlantDataToViews() {
         super.addPlantDataToViews();
+        plantNameTextView.setText(plantName);
         // plantImageButton.setImageResource(plantImageID); TODO... uncomment when plants have pictures
     }
 
@@ -119,8 +122,7 @@ public class PlantInstanceEditActivity extends PlantInstanceActivity implements 
 
         if (plantInstance == null) { // Making new Plant
             plantInstance = new Plant(plantName, plantAge, plantImageID,  plantBreed);
-            plantDBInterface.insertPlant(plantInstance);
-            plantID = plantInstance.getPlantID();
+            plantID = (int) plantDBInterface.insertPlant(plantInstance);
         } else { // Editing existing Plant Object
             plantInstance.setPlantName(plantName);
             // plant type is enforced and cannot be changed

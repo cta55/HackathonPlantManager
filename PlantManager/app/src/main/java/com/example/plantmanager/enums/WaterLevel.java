@@ -1,11 +1,13 @@
 package com.example.plantmanager.enums;
 
+import com.example.plantmanager.R;
+
 public enum WaterLevel {
-    NO_WATER(0),
-    LOW_WATER(1),
-    MEDIUM_WATER(2),
-    HIGH_WATER(3),
-    FULL_WATER(4);
+    NO_WATER(R.drawable.water_empty_foreground),
+    LOW_WATER(R.drawable.water_half_empty_foreground),
+    MEDIUM_WATER(R.drawable.water_half_foreground),
+    HIGH_WATER(R.drawable.water_half_full_foreground),
+    FULL_WATER(R.drawable.water_full_foreground);
 
 
     private final int imageID;

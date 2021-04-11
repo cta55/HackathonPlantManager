@@ -24,7 +24,6 @@ public abstract class PlantInstanceActivity extends AppCompatActivity {
     protected ListenerViewModel listenerViewModel;
     protected PlantInstanceViewModel plantInstanceViewModel;
 
-    protected TextView plantNameTextView;
     protected TextView plantTypeTextView;
     protected TextView plantAgeTextView;
 
@@ -61,7 +60,6 @@ public abstract class PlantInstanceActivity extends AppCompatActivity {
     }
 
     protected void getViewsFromID() {
-        plantNameTextView = findViewById(R.id.headerTextView);
         plantTypeTextView = findViewById(R.id.plantInstanceTypeDetailValueView);
         plantAgeTextView = findViewById(R.id.plantInstanceAgeDetailValueView);
     }
@@ -98,7 +96,6 @@ public abstract class PlantInstanceActivity extends AppCompatActivity {
      * Private helper method for setting up Views to the initial data set.
      */
     protected void addPlantDataToViews() {
-        plantNameTextView.setText(plantName);
         plantTypeTextView.setText(plantBreed.getName());
         plantAgeTextView.setText(String.valueOf(plantAge));
     }

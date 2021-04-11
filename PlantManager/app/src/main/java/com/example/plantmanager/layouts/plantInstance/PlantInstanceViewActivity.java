@@ -8,8 +8,6 @@ import com.example.plantmanager.PlantDB;
 import com.example.plantmanager.R;
 import com.example.plantmanager.layouts.fragments.HeaderFragment;
 import com.example.plantmanager.layouts.fragments.PlantInstancePictureFragment;
-import com.example.plantmanager.viewModels.ListenerViewModel;
-import com.example.plantmanager.viewModels.PlantInstanceViewModel;
 
 public class PlantInstanceViewActivity extends PlantInstanceActivity implements View.OnClickListener{
 
@@ -19,7 +17,7 @@ public class PlantInstanceViewActivity extends PlantInstanceActivity implements 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_plant_instance);
+        setContentView(R.layout.activity_plant_instance_view);
 
         Bundle args = getIntent().getBundleExtra("testBundle");
 
@@ -49,7 +47,7 @@ public class PlantInstanceViewActivity extends PlantInstanceActivity implements 
 
         getSupportFragmentManager().beginTransaction()
                 .setReorderingAllowed(true)
-                .add(R.id.plantInstanceEditHeaderFragmentContainerView, plantInstanceHeaderFragment)
+                .add(R.id.plantInstanceHeaderFragmentContainerView, plantInstanceHeaderFragment)
                 .add(R.id.plantInstancePictureFragmentContainerView, plantInstancePictureFragment)
                 .commit();
     }
@@ -59,7 +57,9 @@ public class PlantInstanceViewActivity extends PlantInstanceActivity implements 
     @Override
     public void onClick(View v) {
         Intent goToPlantInstanceEditIntent = new Intent(this, PlantInstanceEditActivity.class);
-        goToPlantInstanceEditIntent.putExtra(getString(R.string.plant_id_key), plantID);
+        Bundle args = new Bundle();
+        args.putInt(getString(R.string.plant_id_key), plantID);
+        goToPlantInstanceEditIntent.putExtra("testBundle", args);
         startActivity(goToPlantInstanceEditIntent);
     }
 }
