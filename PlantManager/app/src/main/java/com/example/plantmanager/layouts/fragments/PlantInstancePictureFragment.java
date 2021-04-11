@@ -17,6 +17,7 @@ import android.widget.TextView;
 import com.example.plantmanager.Plant;
 import com.example.plantmanager.R;
 import com.example.plantmanager.viewModels.ListenerViewModel;
+import com.example.plantmanager.viewModels.MultiListenerViewModel;
 import com.example.plantmanager.viewModels.PlantInstanceViewModel;
 
 /**
@@ -28,6 +29,7 @@ public class PlantInstancePictureFragment extends Fragment {
 
     // Key for plant ID
     private static final String PLANT_INSTANCE_ID_KEY = "plant_instance_id";
+    private static final String LISTENER_TYPE_KEY = "listener_type";
 
     // View models
     private PlantInstanceViewModel plantViewModel;
@@ -43,6 +45,8 @@ public class PlantInstancePictureFragment extends Fragment {
     private ImageView plantSunlightImageView;
     private TextView plantNameTextView;
 
+    private boolean isMultiListener;
+
 
     /**
      * Public constructor needed for Fragment extensions. SHOULDN'T BE USED DIRECTLY!
@@ -54,10 +58,11 @@ public class PlantInstancePictureFragment extends Fragment {
      * @param plantInstanceID : The ID of the plant instance
      * @return : A fragment bundled with a plant ID
      */
-    public static PlantInstancePictureFragment newPlantInstancePicture(int plantInstanceID) {
+    public static PlantInstancePictureFragment newPlantInstancePicture(int plantInstanceID, boolean isMultiListener) {
         PlantInstancePictureFragment fragment = new PlantInstancePictureFragment();
         Bundle args = new Bundle();
         args.putInt(PLANT_INSTANCE_ID_KEY, plantInstanceID);
+        args.putBoolean(LISTENER_TYPE_KEY, isMultiListener);
         fragment.setArguments(args);
         return fragment;
     }
@@ -70,6 +75,7 @@ public class PlantInstancePictureFragment extends Fragment {
         super.onCreate(savedInstanceState);
         if (getArguments() != null) {
             plantInstanceID = getArguments().getInt(PLANT_INSTANCE_ID_KEY);
+            isMultiListener = getArguments().getBoolean(LISTENER_TYPE_KEY);
         } else {
             throw new RuntimeException("No plant ID passed to Plant Instance Picture Fragment");
         }
@@ -98,7 +104,11 @@ public class PlantInstancePictureFragment extends Fragment {
     public void onViewCreated (@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         // Getting the button listener from the Listener view model
-        listenerViewModel = new ViewModelProvider(requireActivity()).get(ListenerViewModel.class);
+        if (isMultiListener) {
+            listenerViewModel = new ViewModelProvider(requireActivity()).get(MultiListenerViewModel.class);
+        } else {
+            listenerViewModel = new ViewModelProvider(requireActivity()).get(ListenerViewModel.class);
+        }
         plantPictureButton.setOnClickListener(listenerViewModel.getListener(plantInstanceID));
 
         // Getting the Plant from the Plant view model

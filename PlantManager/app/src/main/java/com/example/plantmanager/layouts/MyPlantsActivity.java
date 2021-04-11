@@ -82,7 +82,7 @@ public class MyPlantsActivity extends AppCompatActivity{
         footerButtonFragment = FooterButtonFragment.newFooter(getString(R.string.my_plants_footer_button_text));
         recyclerFragment = new RecyclerFragment();
         for (Plant plant: myPlants) {
-            plantInstancePictureFragments.add(PlantInstancePictureFragment.newPlantInstancePicture(plant.getPlantID()));
+            plantInstancePictureFragments.add(PlantInstancePictureFragment.newPlantInstancePicture(plant.getPlantID(), true));
         }
     }
 

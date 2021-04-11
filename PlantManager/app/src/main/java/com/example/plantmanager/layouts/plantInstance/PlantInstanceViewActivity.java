@@ -42,7 +42,7 @@ public class PlantInstanceViewActivity extends PlantInstanceActivity implements 
                 plantInstance.getPlantName()
         );
         plantInstancePictureFragment = PlantInstancePictureFragment.newPlantInstancePicture(
-                plantID
+                plantID, false
         );
 
         getSupportFragmentManager().beginTransaction()
