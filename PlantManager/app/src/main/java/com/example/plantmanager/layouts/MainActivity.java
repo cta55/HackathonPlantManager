@@ -25,10 +25,8 @@ public class MainActivity extends AppCompatActivity {
 
         myPlantsButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-
-
-//                Intent myPlantsIntent = new Intent(this, );
-//                startActivity(myPlantsIntent);
+                Intent myPlantsIntent = new Intent(v.getContext(), MyPlantsActivity.class);
+                startActivity(myPlantsIntent);
             }
         });
 
