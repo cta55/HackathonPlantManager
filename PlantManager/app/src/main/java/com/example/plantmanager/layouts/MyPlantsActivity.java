@@ -44,6 +44,7 @@ public class MyPlantsActivity extends AppCompatActivity{
         setContentView(R.layout.activity_my_plants);
 
         myPlants = PlantDB.getInstance(this).plantDBInterface().getAll();
+        plantInstancePictureFragments = new ArrayList<>();
         setupFragments();
         setupViewModels();
 
