@@ -84,7 +84,7 @@ public class PlantInstancePictureFragment extends Fragment {
         // Inflate the layout for this fragment
         ViewGroup root = (ViewGroup)inflater.inflate(R.layout.fragment_plant_instance_picture, container, false);
         // Getting views
-        plantPictureButton = root.findViewById(R.id.plantInstancePictureButton);
+        plantPictureButton = root.findViewById(R.id.plantInstanceImageView);
         plantWaterImageView = root.findViewById(R.id.plantInstanceWaterImageView);
         plantSunlightImageView = root.findViewById(R.id.plantInstanceSunlightImageView);
         plantNameTextView = root.findViewById(R.id.plantInstanceNameTextView);
@@ -106,7 +106,7 @@ public class PlantInstancePictureFragment extends Fragment {
         plantInstance = plantViewModel.getPlantInstance(plantInstanceID);
 
         // Applying data from Plant object
-        // plantPictureButton.setImageResource(plantInstance.getImageID()); //TODO... put back when plant images added
+        plantPictureButton.setImageResource(plantInstance.getImageID());
         plantWaterImageView.setImageResource(plantInstance.getPlantBreed().getWaterLevel().getImageID());
         plantSunlightImageView.setImageResource(plantInstance.getPlantBreed().getSunlightLevel().getImageID());
         plantNameTextView.setText(plantInstance.getPlantName());

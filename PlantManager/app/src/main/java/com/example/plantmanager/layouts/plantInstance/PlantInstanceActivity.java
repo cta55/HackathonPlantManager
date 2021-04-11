@@ -1,6 +1,5 @@
 package com.example.plantmanager.layouts.plantInstance;
 
-import android.app.Activity;
 import android.view.View;
 import android.widget.TextView;
 
@@ -8,7 +7,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.ViewModelProvider;
 
 import com.example.plantmanager.Plant;
-import com.example.plantmanager.PlantDB;
 import com.example.plantmanager.PlantDBInterface;
 import com.example.plantmanager.R;
 import com.example.plantmanager.enums.PlantBreed;
@@ -43,7 +41,7 @@ public abstract class PlantInstanceActivity extends AppCompatActivity {
         footerButtonFragment = FooterButtonFragment.newFooter(footerButtonText);
         getSupportFragmentManager().beginTransaction()
                 .setReorderingAllowed(true)
-                .add(R.id.plantInstanceFooterButtonFragmentContainerView, footerButtonFragment)
+                .add(R.id.myPlantFooterButtonFragmentContainerView, footerButtonFragment)
                 .commit();
     }
 
