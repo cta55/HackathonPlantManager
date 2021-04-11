@@ -19,7 +19,7 @@ public class PlantInstanceViewActivity extends PlantInstanceActivity implements 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_plant_instance_view);
 
-        Bundle args = getIntent().getBundleExtra("testBundle");
+        Bundle args = getIntent().getBundleExtra(getString(R.string.plant_instance_bundle_key));
 
         plantDBInterface = PlantDB.getInstance(this).plantDBInterface();
 
@@ -59,7 +59,7 @@ public class PlantInstanceViewActivity extends PlantInstanceActivity implements 
         Intent goToPlantInstanceEditIntent = new Intent(this, PlantInstanceEditActivity.class);
         Bundle args = new Bundle();
         args.putInt(getString(R.string.plant_id_key), plantID);
-        goToPlantInstanceEditIntent.putExtra("testBundle", args);
+        goToPlantInstanceEditIntent.putExtra(getString(R.string.plant_instance_bundle_key), args);
         startActivity(goToPlantInstanceEditIntent);
     }
 }
