@@ -47,7 +47,7 @@ public class PlantInstanceViewActivity extends PlantInstanceActivity implements 
 
         getSupportFragmentManager().beginTransaction()
                 .setReorderingAllowed(true)
-                .add(R.id.plantInstanceHeaderFragmentContainerView, plantInstanceHeaderFragment)
+                .add(R.id.myPlantsHeaderFragmentContainerView, plantInstanceHeaderFragment)
                 .add(R.id.plantInstancePictureFragmentContainerView, plantInstancePictureFragment)
                 .commit();
     }
