@@ -6,7 +6,9 @@ import android.os.Bundle;
 import com.example.plantmanager.Plant;
 import com.example.plantmanager.PlantDB;
 import com.example.plantmanager.layouts.fragments.FooterButtonFragment;
+import com.example.plantmanager.layouts.fragments.GridSpacingItemDecoration;
 import com.example.plantmanager.layouts.fragments.HeaderFragment;
+import com.example.plantmanager.layouts.fragments.ItemOffsetDecoration;
 import com.example.plantmanager.layouts.fragments.PlantInstancePictureFragment;
 import com.example.plantmanager.layouts.fragments.PlantPictureAdapter;
 import com.example.plantmanager.layouts.fragments.RecyclerFragment;
@@ -57,9 +59,10 @@ public class MyPlantsActivity extends AppCompatActivity{
         setupFragments();
         setupViewModels();
 
-        RecyclerView recyclerView = findViewById(R.id.myplantlist);
-        recyclerView.setLayoutManager(new GridLayoutManager(this, 2));
+        RecyclerView recyclerView = findViewById(R.id.myPlantsRecyclerView);
         recyclerView.setAdapter(new PlantPictureAdapter(plantInstancePictureFragments, fragmentManager));
+        recyclerView.setLayoutManager(new GridLayoutManager(this, 2));
+        recyclerView.addItemDecoration(new ItemOffsetDecoration(this, R.dimen.grid_padding));
 
         putFragmentsInLayout();
 

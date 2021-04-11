@@ -12,21 +12,19 @@
         android:id="@+id/myPlantsHeaderFragmentContainerView"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        app:layout_constraintBottom_toTopOf="@id/include"
+        app:layout_constraintBottom_toTopOf="@id/myPlantsRecyclerView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <include
-        android:id="@+id/include"
-        layout="@layout/myplant"
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/myPlantsRecyclerView"
         android:layout_width="0dp"
         android:layout_height="0dp"
         app:layout_constraintBottom_toTopOf="@+id/myPlantsFooterButtonFragmentContainerView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/myPlantsHeaderFragmentContainerView"
-        app:layout_constraintVertical_chainStyle="packed" />
+        app:layout_constraintTop_toBottomOf="@id/myPlantsHeaderFragmentContainerView" />
 
 
     <androidx.fragment.app.FragmentContainerView
@@ -36,7 +34,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/include" />
+        app:layout_constraintTop_toBottomOf="@+id/myPlantsRecyclerView" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
