@@ -1,24 +1,15 @@
 package com.example.plantmanager.layouts.plantInstance;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.lifecycle.ViewModelProvider;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
 import com.example.plantmanager.Plant;
 import com.example.plantmanager.PlantDB;
-import com.example.plantmanager.PlantDBInterface;
 import com.example.plantmanager.R;
 import com.example.plantmanager.enums.PlantBreed;
-import com.example.plantmanager.layouts.MainActivity;
-import com.example.plantmanager.layouts.fragments.FooterButtonFragment;
-import com.example.plantmanager.layouts.fragments.HeaderFragment;
-import com.example.plantmanager.viewModels.ListenerViewModel;
 
 /**
  * Activity for the creation and editing of Plant objects. Editable fields include:
@@ -39,6 +30,7 @@ public class PlantInstanceEditActivity extends PlantInstanceActivity implements 
 
     // GUI Views
     private ImageButton plantImageButton;
+    private TextView plantNameTextView;
 
     public PlantInstanceEditActivity() {
         super();
@@ -90,7 +82,8 @@ public class PlantInstanceEditActivity extends PlantInstanceActivity implements 
     @Override
     protected void getViewsFromID() {
         super.getViewsFromID();
-        plantImageButton = findViewById(R.id.plantInstanceImageButtonView);
+        plantNameTextView = findViewById(R.id.headerTextView);
+        plantImageButton = findViewById(R.id.plantInstanceImageView);
     }
 
 
@@ -100,6 +93,7 @@ public class PlantInstanceEditActivity extends PlantInstanceActivity implements 
     @Override
     protected void addPlantDataToViews() {
         super.addPlantDataToViews();
+        plantNameTextView.setText(plantName);
         // plantImageButton.setImageResource(plantImageID); TODO... uncomment when plants have pictures
     }
 
@@ -119,6 +113,7 @@ public class PlantInstanceEditActivity extends PlantInstanceActivity implements 
 
         if (plantInstance == null) { // Making new Plant
             plantInstance = new Plant(plantName, plantAge, plantImageID,  plantBreed);
+            plantID = (int) plantDBInterface.insertPlant(plantInstance);
         } else { // Editing existing Plant Object
             plantInstance.setPlantName(plantName);
             // plant type is enforced and cannot be changed
@@ -126,8 +121,16 @@ public class PlantInstanceEditActivity extends PlantInstanceActivity implements 
             plantInstance.setImageID(plantImageID);
         }
 
-        // Sending user back to main page
-        Intent goToMainActivityIntent = new Intent(this, MainActivity.class);
-        startActivity(goToMainActivityIntent);
+
+        // test intent
+        Intent goToPlantInstancePageIntent = new Intent(this, PlantInstanceViewActivity.class);
+        Bundle args = new Bundle();
+        args.putInt(getString(R.string.plant_id_key), plantID);
+        goToPlantInstancePageIntent.putExtra("testBundle", args);
+        startActivity(goToPlantInstancePageIntent);
+
+//        // Sending user back to main page
+//        Intent goToMainActivityIntent = new Intent(this, MainActivity.class);
+//        startActivity(goToMainActivityIntent);
     }
 }

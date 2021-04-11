@@ -20,7 +20,7 @@ public interface PlantDBInterface {
 //    List<Plant> getPlantByType(PlantTypes plantTypes);
 
     @Insert
-    void insertPlant(Plant plant);
+    long insertPlant(Plant plant);
 
     @Update
     void updatePlant(Plant plant);

@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 
 import com.example.plantmanager.R;
+import com.example.plantmanager.enums.PlantBreed;
 import com.example.plantmanager.layouts.fragments.PlantTypeDetailFragment;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
@@ -24,6 +25,9 @@ import android.view.MenuItem;
  * in a {@link PlantTypeListActivity}.
  */
 public class PlantTypeDetailActivity extends AppCompatActivity {
+
+
+    private PlantBreed plantBreed;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,18 +52,18 @@ public class PlantTypeDetailActivity extends AppCompatActivity {
             actionBar.setDisplayHomeAsUpEnabled(true);
         }
 
-        if (savedInstanceState == null) {
-            // Create the detail fragment and add it to the activity
-            // using a fragment transaction.
-            Bundle arguments = new Bundle();
-            arguments.putString(PlantTypeDetailFragment.ARG_ITEM_ID,
-                    getIntent().getStringExtra(PlantTypeDetailFragment.ARG_ITEM_ID));
-            PlantTypeDetailFragment fragment = new PlantTypeDetailFragment();
-            fragment.setArguments(arguments);
-            getSupportFragmentManager().beginTransaction()
-                    .add(R.id.planttype_detail_container, fragment)
-                    .commit();
-        }
+        plantBreed = (PlantBreed) getIntent().getSerializableExtra(PlantTypeDetailFragment.ARG_ITEM_ID);
+
+        // Create the detail fragment and add it to the activity
+        // using a fragment transaction.
+        Bundle arguments = new Bundle();
+        arguments.putSerializable(PlantTypeDetailFragment.ARG_ITEM_ID, plantBreed);
+
+        PlantTypeDetailFragment fragment = new PlantTypeDetailFragment();
+        fragment.setArguments(arguments);
+        getSupportFragmentManager().beginTransaction()
+                .add(R.id.planttype_detail_container, fragment)
+                .commit();
     }
 
     @Override

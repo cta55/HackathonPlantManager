@@ -59,7 +59,7 @@ public class HeaderFragment extends Fragment {
 
         // Retrieving headerText value from bundle
         if (getArguments() != null) {
-            headerText = savedInstanceState.getString(HEADER_TEXT_CODE);
+            headerText = getArguments().getString(HEADER_TEXT_CODE);
         } else {
             headerText = DEFAULT_HEADER_TEXT;
         }

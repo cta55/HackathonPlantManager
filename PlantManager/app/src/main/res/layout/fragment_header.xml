@@ -4,14 +4,17 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/headerRootConstraintLayout"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    tools:context=".layouts.fragments.HeaderFragment" >
+    android:layout_height="match_parent"
+    tools:context=".layouts.fragments.HeaderFragment">
 
     <TextView
         android:id="@+id/headerTextView"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:background="@drawable/header_text_view_background_bottom_border"
+        android:gravity="center_horizontal|center_vertical"
+        android:textAlignment="gravity"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display2"
         android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintDimensionRatio="3"
