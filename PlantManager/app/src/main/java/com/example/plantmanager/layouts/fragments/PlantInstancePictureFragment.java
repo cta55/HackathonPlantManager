@@ -84,7 +84,7 @@ public class PlantInstancePictureFragment extends Fragment {
         // Inflate the layout for this fragment
         ViewGroup root = (ViewGroup)inflater.inflate(R.layout.fragment_plant_instance_picture, container, false);
         // Getting views
-        plantPictureButton = root.findViewById(R.id.plantInstancePictureButton);
+        plantPictureButton = root.findViewById(R.id.plantInstanceImageView);
         plantWaterImageView = root.findViewById(R.id.plantInstanceWaterImageView);
         plantSunlightImageView = root.findViewById(R.id.plantInstanceSunlightImageView);
         plantNameTextView = root.findViewById(R.id.plantInstanceNameTextView);
