@@ -1,24 +1,15 @@
 package com.example.plantmanager.layouts.plantInstance;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.lifecycle.ViewModelProvider;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
 import com.example.plantmanager.Plant;
 import com.example.plantmanager.PlantDB;
-import com.example.plantmanager.PlantDBInterface;
 import com.example.plantmanager.R;
 import com.example.plantmanager.enums.PlantBreed;
-import com.example.plantmanager.layouts.MainActivity;
-import com.example.plantmanager.layouts.fragments.FooterButtonFragment;
-import com.example.plantmanager.layouts.fragments.HeaderFragment;
-import com.example.plantmanager.viewModels.ListenerViewModel;
 
 /**
  * Activity for the creation and editing of Plant objects. Editable fields include:
@@ -92,7 +83,7 @@ public class PlantInstanceEditActivity extends PlantInstanceActivity implements 
     protected void getViewsFromID() {
         super.getViewsFromID();
         plantNameTextView = findViewById(R.id.headerTextView);
-        plantImageButton = findViewById(R.id.plantInstanceImageButtonView);
+        plantImageButton = findViewById(R.id.plantInstanceImageView);
     }
 
 

@@ -84,7 +84,7 @@ public class PlantTypeListActivity extends AppCompatActivity {
                 } else {
                     Context context = view.getContext();
                     Intent intent = new Intent(context, PlantTypeDetailActivity.class);
-                    intent.putExtra(PlantTypeDetailFragment.ARG_ITEM_ID, item.name());
+                    intent.putExtra(PlantTypeDetailFragment.ARG_ITEM_ID, item);
 
                     context.startActivity(intent);
                 }
