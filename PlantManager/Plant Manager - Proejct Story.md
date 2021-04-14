@@ -24,24 +24,26 @@ The app was built for Android using Java, as the majority of us were unfamiliar 
 
 Our team of 4 was split into 2 groups, 1 for the front end, to manage all of the views and connections to the back end, and the other group for the back end.
 
-For the front end team, a basic UI interface was drafted using OneNote
+For the front end team, a basic UI interface was drafted using OneNote drawings, and work was distributed and collaberated where required.
+
+For the back end a basic domain model diagram was drafted and work was done collaberatively, as neither of the backend users had ever worked with android before, so it was a new learning experience for the two.
+
+The app is based around a base `Plant` object, which has its plant breed information fetched from the enum `PlantBreed`. A small sample of plants where included for the prototype of the app.
+
+The Users plants they create are stored locally on a Room Database, called `PlantDB`. Although it would be ideal to use an external database, we did not have access to the resources to enable it.
 
 <br>
 
 ## Challenges we ran into
+As this is collectively our first hackathon, the time pressure was felt immensely, and was difficult to judge a combination of priorities and how long should be spent on a task before abandoning it, as well as what could be abandoned.
+
+The lack of experience that half the team had working with Android became difficult, especially regarding how the classes that we created would be interacted with on the front end, and what the front end requried.
+
+No members were familiar with how to create and store a database locally on android. The creation and implementation of this into our system gave us quite a headache, and was core the app's functionality.
+
+
 
 <br>
 
 ## Accomplishments that we're proud of
-
-<br>
-
-## What we learned
-
-<br>
-
-## What's next for Plant Manager
-
-<br>
-
-
+The project ultimately lead to the entirety of the team learning how Android works, as it was a mostly unfamiliar platform for any of us to work with.
